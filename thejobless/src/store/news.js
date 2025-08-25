@@ -99,6 +99,46 @@ export const useNewsStore = defineStore("news", {
     
     commentsOf: (state) => (newsId) => {
       return state.comments[newsId] || [];
+    },
+    
+    // getter ใหม่สำหรับผลการโหวตตามเสียงข้างมาก
+    majorityVote: (state) => (newsId) => {
+      const vote = state.votes[newsId] || { fake: 0, notFake: 0 };
+      const total = vote.fake + vote.notFake;
+      
+      if (total === 0) return { result: 'no_votes', percentage: 0, leading: null };
+      
+      const fakePercentage = (vote.fake / total) * 100;
+      const notFakePercentage = (vote.notFake / total) * 100;
+      
+      if (vote.fake > vote.notFake) {
+        return { 
+          result: 'fake', 
+          percentage: Math.round(fakePercentage), 
+          leading: 'fake',
+          fakeVotes: vote.fake,
+          notFakeVotes: vote.notFake,
+          total: total
+        };
+      } else if (vote.notFake > vote.fake) {
+        return { 
+          result: 'not_fake', 
+          percentage: Math.round(notFakePercentage), 
+          leading: 'not_fake',
+          fakeVotes: vote.fake,
+          notFakeVotes: vote.notFake,
+          total: total
+        };
+      } else {
+        return { 
+          result: 'tie', 
+          percentage: 50, 
+          leading: null,
+          fakeVotes: vote.fake,
+          notFakeVotes: vote.notFake,
+          total: total
+        };
+      }
     }
   }
 });

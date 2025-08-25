@@ -21,6 +21,10 @@ const pageNumbers = computed(() => {
 const goToNewsDetail = (newsId) => {
   router.push(`/news/${newsId}`);
 };
+
+const getVoteStatus = (newsId) => {
+  return store.majorityVote(newsId);
+};
 </script>
 
 <template>
@@ -134,11 +138,34 @@ const goToNewsDetail = (newsId) => {
           <h3 class="font-bold text-xl mb-3 text-gray-900 leading-tight group-hover:text-blue-600 transition-colors duration-200">{{ news.title }}</h3>
           <p class="text-gray-700 text-base leading-relaxed mb-4">{{ news.summary }}</p>
           
+          <!-- Majority Vote Display -->
+          <div v-if="getVoteStatus(news.id).total > 0" class="mb-4 p-3 rounded-lg" :class="{
+            'bg-red-50 border border-red-200': getVoteStatus(news.id).result === 'fake',
+            'bg-green-50 border border-green-200': getVoteStatus(news.id).result === 'not_fake',
+            'bg-yellow-50 border border-yellow-200': getVoteStatus(news.id).result === 'tie'
+          }">
+            <div class="text-center">
+              <div class="text-lg font-bold" :class="{
+                'text-red-700': getVoteStatus(news.id).result === 'fake',
+                'text-green-700': getVoteStatus(news.id).result === 'not_fake',
+                'text-yellow-700': getVoteStatus(news.id).result === 'tie'
+              }">
+                {{ getVoteStatus(news.id).result === 'fake' ? ' Community says: FAKE' : 
+                   getVoteStatus(news.id).result === 'not_fake' ? '👍 Community says: VERIFIED' : 
+                   ' Community is split' }}
+              </div>
+              <div class="text-sm text-gray-600 mt-1">
+                {{ getVoteStatus(news.id).percentage }}% majority 
+                ({{ getVoteStatus(news.id).total }} total votes)
+              </div>
+            </div>
+          </div>
+          
           <div class="flex items-center justify-between text-sm">
             <span class="text-gray-600 font-medium">{{ new Date(news.reportedAt).toLocaleDateString() }}</span>
             <div class="flex gap-3">
-              <span class="text-red-600 font-semibold">👎 {{ store.votes[news.id]?.fake || 0 }}</span>
-              <span class="text-green-600 font-semibold">👍 {{ store.votes[news.id]?.notFake || 0 }}</span>
+              <span class="text-red-600 font-semibold">👎 {{ getVoteStatus(news.id).fakeVotes || 0 }}</span>
+              <span class="text-green-600 font-semibold">👍 {{ getVoteStatus(news.id).notFakeVotes || 0 }}</span>
             </div>
           </div>
           

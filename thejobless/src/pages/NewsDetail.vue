@@ -10,6 +10,7 @@ const store = useNewsStore();
 const news = computed(() => store.all.find(n => n.id === id));
 const vote = computed(() => store.votes[id] || { fake: 0, notFake: 0 });
 const comments = computed(() => store.comments[id] || []);
+const majorityVote = computed(() => store.majorityVote(id));
 </script>
 
 <template>
@@ -53,6 +54,50 @@ const comments = computed(() => store.comments[id] || []);
         <h2 class="text-2xl font-bold mb-4 text-gray-900">Full Content</h2>
         <p class="text-lg text-gray-700 leading-relaxed">{{ news.content }}</p>
       </div>
+
+      <!-- Community Verdict Section -->
+      <section v-if="majorityVote.total > 0" class="bg-white p-8 rounded-xl shadow-sm border">
+        <h2 class="font-bold text-2xl mb-6 text-gray-900">Community Verdict</h2>
+        
+        <div class="text-center p-8 rounded-xl" :class="{
+          'bg-red-50 border-2 border-red-200': majorityVote.result === 'fake',
+          'bg-green-50 border-2 border-green-200': majorityVote.result === 'not_fake',
+          'bg-yellow-50 border-2 border-yellow-200': majorityVote.result === 'tie'
+        }">
+          <div class="text-6xl mb-4">
+            {{ majorityVote.result === 'fake' ? '' : 
+               majorityVote.result === 'not_fake' ? '👍' : '🤝' }}
+          </div>
+          
+          <h3 class="text-3xl font-bold mb-3" :class="{
+            'text-red-700': majorityVote.result === 'fake',
+            'text-green-700': majorityVote.result === 'not_fake',
+            'text-yellow-700': majorityVote.result === 'tie'
+          }">
+            {{ majorityVote.result === 'fake' ? 'FAKE NEWS DETECTED!' : 
+               majorityVote.result === 'not_fake' ? 'VERIFIED AS TRUE!' : 
+               'COMMUNITY IS SPLIT' }}
+          </h3>
+          
+          <p class="text-lg text-gray-600 mb-4">
+            {{ majorityVote.result === 'fake' ? 'The community has identified this as potentially misleading or false information.' : 
+               majorityVote.result === 'not_fake' ? 'The community has verified this information as accurate and trustworthy.' : 
+               'The community is evenly divided on this news item.' }}
+          </p>
+          
+          <div class="text-2xl font-bold" :class="{
+            'text-red-600': majorityVote.result === 'fake',
+            'text-green-600': majorityVote.result === 'not_fake',
+            'text-yellow-600': majorityVote.result === 'tie'
+          }">
+            {{ majorityVote.percentage }}% Majority
+          </div>
+          
+          <div class="text-sm text-gray-500 mt-2">
+            Based on {{ majorityVote.total }} community votes
+          </div>
+        </div>
+      </section>
 
       <!-- Quick Vote Section -->
       <section class="bg-white p-8 rounded-xl shadow-sm border">
