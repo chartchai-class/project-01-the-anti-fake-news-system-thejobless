@@ -24,18 +24,18 @@ const goToNewsDetail = (newsId) => {
   router.push(`/news/${newsId}`);
 };
 
+// แก้ไขฟังก์ชันนี้ให้แสดงผลถูกต้อง
 const getVoteStatus = (newsId) => {
   return store.majorityVote(newsId);
 };
 
+// แก้ไขฟังก์ชันนี้ให้แสดงผลตามการโหวตจริง
 const getNewsStatus = (newsId) => {
   const voteStatus = getVoteStatus(newsId);
   
   // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
   if (voteStatus.total > 0) {
-    if (voteStatus.result === 'fake') return 'fake';
-    if (voteStatus.result === 'not_fake') return 'not_fake';
-    return 'tie';
+    return voteStatus.result;
   }
   
   // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
@@ -43,31 +43,86 @@ const getNewsStatus = (newsId) => {
   return news?.status || "not_fake";
 };
 
+// แก้ไขฟังก์ชันนี้ให้แสดงผลถูกต้อง
 const getStatusBadge = (newsId) => {
-  const status = getNewsStatus(newsId);
   const voteStatus = getVoteStatus(newsId);
   
-  if (status === 'fake') {
+  // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
+  if (voteStatus.total > 0) {
+    if (voteStatus.result === 'fake') {
+      return {
+        text: 'Fake News (Community)',
+        class: 'bg-red-100 text-red-800 border border-red-200'
+      };
+    } else if (voteStatus.result === 'not_fake') {
+      return {
+        text: 'Verified (Community)',
+        class: 'bg-green-100 text-green-800 border border-green-200'
+      };
+    } else if (voteStatus.result === 'tie') {
+      return {
+        text: 'Split Vote',
+        class: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+      };
+    }
+  }
+  
+  // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
+  const news = store.all.find(n => n.id === newsId);
+  if (news?.status === 'fake') {
     return {
       text: 'Fake News',
       class: 'bg-red-100 text-red-800 border border-red-200'
     };
-  } else if (status === 'not_fake') {
-    return {
-      text: 'Verified',
-      class: 'bg-green-100 text-green-800 border border-green-200'
-    };
-  } else if (status === 'tie') {
-    return {
-      text: 'Split Vote',
-      class: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
-    };
   } else {
     return {
-      text: 'No Votes',
+      text: 'Unverified',
       class: 'bg-gray-100 text-gray-600 border border-gray-200'
     };
   }
+};
+
+// ฟังก์ชันสำหรับแสดงผลการโหวต
+const getVoteDisplay = (newsId) => {
+  const v = store.majorityVote(newsId);
+  return {
+    fake: v.fakeVotes || 0,
+    notFake: v.notFakeVotes || 0,
+    total: v.total || 0,
+    result: v.result || "no_votes",
+    percentage: v.percentage || 0
+  };
+};
+
+const scrollToTop = () => {
+  // หน่วง 1 frame ให้ DOM อัปเดตก่อน แล้วค่อยเลื่อน
+  requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
+const setPageAndScroll = (p) => {
+  store.setPage(p);
+  scrollToTop();
+};
+
+const prevPageAndScroll = () => {
+  if (store.currentPage > 1) {
+    store.setPage(store.currentPage - 1);
+    scrollToTop();
+  }
+};
+
+const nextPageAndScroll = () => {
+  if (store.currentPage < store.totalPages) {
+    store.setPage(store.currentPage + 1);
+    scrollToTop();
+  }
+};
+
+const onPageSizeChange = (e) => {
+  store.setPageSize(Number(e.target.value));
+  scrollToTop();
 };
 </script>
 
@@ -131,7 +186,7 @@ const getStatusBadge = (newsId) => {
         <div class="flex items-center gap-2 lg:gap-3">
           <label class="text-sm sm:text-base font-medium text-gray-700">Show:</label>
           <select 
-            @change="store.setPageSize(Number($event.target.value))"
+            @change="onPageSizeChange"
             :value="store.pageSize"
             class="border-2 border-gray-200 rounded-lg px-2 sm:px-3 py-2 text-sm sm:text-base focus:border-blue-500 focus:outline-none"
           >
@@ -179,7 +234,9 @@ const getStatusBadge = (newsId) => {
           <img 
             :src="news.imageUrl" 
             :alt="news.title"
+            loading="lazy"
             class="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+            @error="$event.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yMDAgMjAwTDMwMCAzMDBNNDAwIDIwMEw1MDAgMzAwTTYwMCAyMDBMNzAwIDMwMCIgc3Ryb2tlPSIjOTNBQjFGIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+'"
           />
           <!-- Overlay with click hint -->
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
@@ -205,24 +262,24 @@ const getStatusBadge = (newsId) => {
           <p class="text-gray-700 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">{{ news.summary }}</p>
           
           <!-- Majority Vote Display -->
-          <div v-if="getVoteStatus(news.id).total > 0" class="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg" :class="{
-            'bg-red-50 border border-red-200': getVoteStatus(news.id).result === 'fake',
-            'bg-green-50 border border-green-200': getVoteStatus(news.id).result === 'not_fake',
-            'bg-yellow-50 border border-yellow-200': getVoteStatus(news.id).result === 'tie'
+          <div v-if="getVoteDisplay(news.id).total > 0" class="mb-3 sm:mb-4 p-2 sm:p-3 rounded-lg" :class="{
+            'bg-red-50 border border-red-200': getVoteDisplay(news.id).result === 'fake',
+            'bg-green-50 border border-green-200': getVoteDisplay(news.id).result === 'not_fake',
+            'bg-yellow-50 border border-yellow-200': getVoteDisplay(news.id).result === 'tie'
           }">
             <div class="text-center">
               <div class="text-sm sm:text-base lg:text-lg font-bold" :class="{
-                'text-red-700': getVoteStatus(news.id).result === 'fake',
-                'text-green-700': getVoteStatus(news.id).result === 'not_fake',
-                'text-yellow-700': getVoteStatus(news.id).result === 'tie'
+                'text-red-700': getVoteDisplay(news.id).result === 'fake',
+                'text-green-700': getVoteDisplay(news.id).result === 'not_fake',
+                'text-yellow-700': getVoteDisplay(news.id).result === 'tie'
               }">
-                {{ getVoteStatus(news.id).result === 'fake' ? ' Community says: FAKE' : 
-                   getVoteStatus(news.id).result === 'not_fake' ? '👍 Community says: VERIFIED' : 
+                {{ getVoteDisplay(news.id).result === 'fake' ? ' Community says: FAKE' : 
+                   getVoteDisplay(news.id).result === 'not_fake' ? '👍 Community says: VERIFIED' : 
                    ' Community is split' }}
               </div>
               <div class="text-xs sm:text-sm text-gray-600 mt-1">
-                {{ getVoteStatus(news.id).percentage }}% majority 
-                ({{ getVoteStatus(news.id).total }} total votes)
+                {{ getVoteDisplay(news.id).percentage }}% majority 
+                ({{ getVoteDisplay(news.id).total }} total votes)
               </div>
             </div>
           </div>
@@ -230,8 +287,8 @@ const getStatusBadge = (newsId) => {
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs sm:text-sm">
             <span class="text-gray-600 font-medium">{{ new Date(news.reportedAt).toLocaleDateString() }}</span>
             <div class="flex gap-2 sm:gap-3">
-              <span class="text-red-600 font-semibold">👎 {{ getVoteStatus(news.id).fakeVotes || 0 }}</span>
-              <span class="text-green-600 font-semibold">👍 {{ getVoteStatus(news.id).notFakeVotes || 0 }}</span>
+              <span class="text-red-600 font-semibold">👎 {{ getVoteDisplay(news.id).fake }}</span>
+              <span class="text-green-600 font-semibold">👍 {{ getVoteDisplay(news.id).notFake }}</span>
             </div>
           </div>
           
@@ -251,18 +308,20 @@ const getStatusBadge = (newsId) => {
     <!-- Pagination -->
     <div v-if="store.totalPages > 1" class="flex justify-center">
       <div class="flex flex-wrap gap-1 sm:gap-2 justify-center">
-        <button 
-          @click="store.setPage(store.currentPage - 1)"
+        <!-- ปุ่ม Previous -->
+        <button
+          @click="prevPageAndScroll"
           :disabled="store.currentPage === 1"
           class="px-2 sm:px-4 py-2 rounded-lg border-2 border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 hover:border-gray-300 font-medium text-gray-700 text-sm sm:text-base transition-all duration-200"
         >
           Previous
         </button>
         
-        <button 
+        <!-- ปุ่มเลขหน้า -->
+        <button
           v-for="page in pageNumbers"
           :key="page"
-          @click="store.setPage(page)"
+          @click="setPageAndScroll(page)"
           :class="[
             'px-2 sm:px-4 py-2 rounded-lg border-2 font-medium transition-all duration-200 text-sm sm:text-base',
             store.currentPage === page 
@@ -273,8 +332,9 @@ const getStatusBadge = (newsId) => {
           {{ page }}
         </button>
         
-        <button 
-          @click="store.setPage(store.currentPage + 1)"
+        <!-- ปุ่ม Next -->
+        <button
+          @click="nextPageAndScroll"
           :disabled="store.currentPage === store.totalPages"
           class="px-2 sm:px-4 py-2 rounded-lg border-2 border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 hover:border-gray-300 font-medium text-gray-700 text-sm sm:text-base transition-all duration-200"
         >

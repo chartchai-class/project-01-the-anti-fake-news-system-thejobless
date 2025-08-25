@@ -18,28 +18,60 @@ export const useNewsStore = defineStore("news", {
   getters: {
     voteOf: (s) => (id) => s.votes[id] || { fake: 0, notFake: 0 },
     commentsOf: (s) => (id) => s.comments[id] || [],
-    majorityVote: (s) => (id) => {
-      const v = s.voteOf(id); const total = v.fake + v.notFake;
-      if (!total) return { result: "no_votes", total: 0, fakeVotes: 0, notFakeVotes: 0, percentage: 0 };
-      if (v.fake > v.notFake) return { result: "fake", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: Math.round((v.fake/total)*100) };
-      if (v.notFake > v.fake) return { result: "not_fake", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: Math.round((v.notFake/total)*100) };
-      return { result: "tie", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: 50 };
+    
+    // แก้ไขให้แสดงผลตามการโหวตจริง
+    majorityVote: (s) => (newsId) => {
+      const v = s.voteOf(newsId);
+      const total = (v.fake || 0) + (v.notFake || 0);
+      if (!total) {
+        return { result: "no_votes", total: 0, fakeVotes: 0, notFakeVotes: 0, percentage: 0 };
+      }
+
+      const fake = v.fake || 0;
+      const notFake = v.notFake || 0;
+      const majority = Math.max(fake, notFake);
+      const percentage = Math.round((majority / total) * 100);
+
+      if (fake > notFake) {
+        return { result: "fake", total, fakeVotes: fake, notFakeVotes: notFake, percentage };
+      }
+      if (notFake > fake) {
+        return { result: "not_fake", total, fakeVotes: fake, notFakeVotes: notFake, percentage };
+      }
+      // tie
+      return { result: "tie", total, fakeVotes: fake, notFakeVotes: notFake, percentage: 50 };
     },
 
     filteredNews: (s) => {
       let list = s.all;
-      if (s.filter === "fake" || s.filter === "not_fake") {
+      
+      // กรองตาม validation status
+      if (s.filter === "fake") {
         list = list.filter(n => {
           const mv = s.majorityVote(n.id);
-          if (mv.total > 0) return mv.result === s.filter;
-          return n.status === s.filter;
+          // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
+          if (mv.total > 0) return mv.result === "fake";
+          // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
+          return n.status === "fake";
+        });
+      } else if (s.filter === "not_fake") {
+        list = list.filter(n => {
+          const mv = s.majorityVote(n.id);
+          // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
+          if (mv.total > 0) return mv.result === "not_fake";
+          // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
+          return n.status === "not_fake";
         });
       }
+      
+      // กรองตาม category
       if (s.filters.category !== "all") {
         list = list.filter(n => n.category === s.filters.category);
       }
+      
       return list;
     },
+    
     totalPages: (s) => Math.max(1, Math.ceil(s.filteredNews.length / s.pageSize)),
     paginatedNews: (s) => {
       const start = (s.currentPage - 1) * s.pageSize;
@@ -51,12 +83,15 @@ export const useNewsStore = defineStore("news", {
     _assign(news = [], comments = [], votes = []) {
       this.all = news;
       this.comments = comments.reduce((acc, c) => {
-        (acc[c.newsId] ??= []).push(c); return acc;
+        (acc[c.newsId] ??= []).push(c); 
+        return acc;
       }, {});
       this.votes = votes.reduce((acc, v) => {
-        acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; return acc;
+        acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; 
+        return acc;
       }, {});
     },
+    
     _hydrateFromCache() {
       try {
         const raw = localStorage.getItem(CACHE_KEY);
@@ -68,21 +103,22 @@ export const useNewsStore = defineStore("news", {
         return true;
       } catch { return false; }
     },
+    
     _saveCache(payload) {
-      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), payload })); } catch {}
+      try { 
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), payload })); 
+      } catch {}
     },
 
     async fetchNews({ force = false, useCache = true } = {}) {
       if (this.all.length && !force) return;
 
       this.loading = true;
-
-      // แสดงทันทีจาก cache ถ้ามี
       let hydrated = false;
+      
       if (useCache) hydrated = this._hydrateFromCache();
       if (hydrated) { this.loading = false; }
 
-      // รีเฟรชเงียบๆ เบื้องหลัง (ไม่หน่วง UI)
       try {
         const res = await fetch("/data/db.json", { cache: "no-store" });
         if (!res.ok) throw new Error("fetch failed");
@@ -104,7 +140,13 @@ export const useNewsStore = defineStore("news", {
       if (!this.votes[id]) this.votes[id] = { fake: 0, notFake: 0 };
       isFake ? this.votes[id].fake++ : this.votes[id].notFake++;
       if (text || imageUrl){
-        (this.comments[id] ??= []).push({ id: "u"+Date.now(), isFake, text, imageUrl, at: new Date().toISOString() });
+        (this.comments[id] ??= []).push({ 
+          id: "u"+Date.now(), 
+          isFake, 
+          text, 
+          imageUrl, 
+          at: new Date().toISOString() 
+        });
       }
     }
   }

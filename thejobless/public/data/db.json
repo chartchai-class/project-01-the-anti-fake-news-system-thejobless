@@ -3,662 +3,662 @@
     {
       "id": "1",
       "title": "News #1",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "fake",
+      "summary": "New policy proposal aims to reform national healthcare.",
+      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-25T14:00:06.906Z",
-      "imageUrl": "https://picsum.photos/seed/1/800/400"
+      "reportedAt": "2025-08-25T15:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "2",
       "title": "News #2",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "not_fake",
+      "summary": "New battery design targets double‑day phone usage.",
+      "content": "Longer qubit coherence advances practical error correction.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-25T13:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/2/800/400"
+      "reportedAt": "2025-08-25T14:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "3",
       "title": "News #3",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Nationwide mental health campaign kicks off.",
+      "content": "Phase‑III results show strong protection and mild side effects.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-25T12:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/3/800/400"
+      "reportedAt": "2025-08-25T13:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "4",
       "title": "News #4",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "fake",
+      "summary": "Blockbuster breaks opening‑weekend records.",
+      "content": "Creators promise a conclusive arc and farewells.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-25T11:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/4/800/400"
+      "reportedAt": "2025-08-25T12:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "5",
       "title": "News #5",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "not_fake",
+      "summary": "National record falls in 100‑meter sprint.",
+      "content": "Courts, pools, and classes open for the community.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-25T10:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/5/800/400"
+      "reportedAt": "2025-08-25T11:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "6",
       "title": "News #6",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "not_fake",
+      "summary": "Brands adopt greener models to win loyalty.",
+      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-25T09:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/6/800/400"
+      "reportedAt": "2025-08-25T10:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "7",
       "title": "News #7",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "fake",
+      "summary": "Rover finds mineral clues of ancient water.",
+      "content": "Tandem cells convert more sunlight; trials begin.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-25T08:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/7/800/400"
+      "reportedAt": "2025-08-25T09:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "8",
       "title": "News #8",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "not_fake",
+      "summary": "Curriculum refresh centers critical thinking.",
+      "content": "Longitudinal studies will track engagement and outcomes.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-25T07:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/8/800/400"
+      "reportedAt": "2025-08-25T08:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "9",
       "title": "News #9",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "not_fake",
+      "summary": "Election results hint at a shift in voter priorities.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-25T06:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/9/800/400"
+      "reportedAt": "2025-08-25T07:47:04.388Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "10",
       "title": "News #10",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "fake",
+      "summary": "AI breakthrough promises faster medical diagnostics.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-25T05:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/10/800/400"
+      "reportedAt": "2025-08-25T06:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "11",
       "title": "News #11",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Mediterranean diet linked to heart health benefits.",
+      "content": "Hotlines and school programs aim for early support.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-25T04:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/11/800/400"
+      "reportedAt": "2025-08-25T05:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "12",
       "title": "News #12",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "not_fake",
+      "summary": "City festival returns with record attendance.",
+      "content": "Audiences praise practical effects and character‑driven story.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-25T03:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/12/800/400"
+      "reportedAt": "2025-08-25T04:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "13",
       "title": "News #13",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "fake",
+      "summary": "Underdogs clinch title after dramatic finale.",
+      "content": "Technique changes credited for the record time.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-25T02:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/13/800/400"
+      "reportedAt": "2025-08-25T03:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "14",
       "title": "News #14",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "not_fake",
+      "summary": "Markets edge to fresh highs on earnings beat.",
+      "content": "Lower waste and better retention after supply‑chain redesigns.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-25T01:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/14/800/400"
+      "reportedAt": "2025-08-25T02:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "15",
       "title": "News #15",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "not_fake",
+      "summary": "Researchers catalog a vibrant rainforest species.",
+      "content": "Hydrated minerals hint at past streams and habitable conditions.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-25T00:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/15/800/400"
+      "reportedAt": "2025-08-25T01:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "16",
       "title": "News #16",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "fake",
+      "summary": "Online platform tops one million learners.",
+      "content": "Inquiry‑based projects measure real‑world problem solving.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-24T23:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/16/800/400"
+      "reportedAt": "2025-08-25T00:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "17",
       "title": "News #17",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "not_fake",
+      "summary": "Parliament debates stronger climate legislation.",
+      "content": "Analysts note higher youth turnout, reshaping party priorities.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T22:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/17/800/400"
+      "reportedAt": "2025-08-24T23:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "18",
       "title": "News #18",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "not_fake",
+      "summary": "Quantum team reports record coherence stability.",
+      "content": "The model flags rare conditions from scans with high precision.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T21:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/18/800/400"
+      "reportedAt": "2025-08-24T22:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "19",
       "title": "News #19",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "fake",
+      "summary": "Trial data shows promising vaccine efficacy.",
+      "content": "Longitudinal data associates the diet with lower cardiovascular risk.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T20:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/19/800/400"
+      "reportedAt": "2025-08-24T21:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "20",
       "title": "News #20",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "not_fake",
+      "summary": "Beloved series announces its final season.",
+      "content": "Headliners and new artists boost local business.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-24T19:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/20/800/400"
+      "reportedAt": "2025-08-24T20:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "21",
       "title": "News #21",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "not_fake",
+      "summary": "New downtown sports complex opens to public.",
+      "content": "An overtime goal sealed a historic championship.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-24T18:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/21/800/400"
+      "reportedAt": "2025-08-24T19:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "22",
       "title": "News #22",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "fake",
+      "summary": "AI startup secures major growth investment.",
+      "content": "Indexes rose on stronger guidance despite inflation concerns.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-24T17:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/22/800/400"
+      "reportedAt": "2025-08-24T18:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "23",
       "title": "News #23",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "not_fake",
+      "summary": "Lab boosts solar efficiency with new cells.",
+      "content": "Genetics confirm a new species, guiding conservation.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-24T16:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/23/800/400"
+      "reportedAt": "2025-08-24T17:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "24",
       "title": "News #24",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "not_fake",
+      "summary": "University wins grant for teaching research.",
+      "content": "Modular courses help workers reskill with certificates.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-24T15:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/24/800/400"
+      "reportedAt": "2025-08-24T16:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "25",
       "title": "News #25",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "fake",
+      "summary": "New policy proposal aims to reform national healthcare.",
+      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-24T14:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/25/800/400"
+      "reportedAt": "2025-08-24T15:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "26",
       "title": "News #26",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "not_fake",
+      "summary": "New battery design targets double‑day phone usage.",
+      "content": "Longer qubit coherence advances practical error correction.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-24T13:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/26/800/400"
+      "reportedAt": "2025-08-24T14:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "27",
       "title": "News #27",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Nationwide mental health campaign kicks off.",
+      "content": "Phase‑III results show strong protection and mild side effects.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T12:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/27/800/400"
+      "reportedAt": "2025-08-24T13:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "28",
       "title": "News #28",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "fake",
+      "summary": "Blockbuster breaks opening‑weekend records.",
+      "content": "Creators promise a conclusive arc and farewells.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T11:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/28/800/400"
+      "reportedAt": "2025-08-24T12:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "29",
       "title": "News #29",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "not_fake",
+      "summary": "National record falls in 100‑meter sprint.",
+      "content": "Courts, pools, and classes open for the community.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T10:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/29/800/400"
+      "reportedAt": "2025-08-24T11:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "30",
       "title": "News #30",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "not_fake",
+      "summary": "Brands adopt greener models to win loyalty.",
+      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-24T09:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/30/800/400"
+      "reportedAt": "2025-08-24T10:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "31",
       "title": "News #31",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "fake",
+      "summary": "Rover finds mineral clues of ancient water.",
+      "content": "Tandem cells convert more sunlight; trials begin.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-24T08:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/31/800/400"
+      "reportedAt": "2025-08-24T09:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "32",
       "title": "News #32",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "not_fake",
+      "summary": "Curriculum refresh centers critical thinking.",
+      "content": "Longitudinal studies will track engagement and outcomes.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-24T07:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/32/800/400"
+      "reportedAt": "2025-08-24T08:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "33",
       "title": "News #33",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "not_fake",
+      "summary": "Election results hint at a shift in voter priorities.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-24T06:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/33/800/400"
+      "reportedAt": "2025-08-24T07:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "34",
       "title": "News #34",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "fake",
+      "summary": "AI breakthrough promises faster medical diagnostics.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-24T05:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/34/800/400"
+      "reportedAt": "2025-08-24T06:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "35",
       "title": "News #35",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Mediterranean diet linked to heart health benefits.",
+      "content": "Hotlines and school programs aim for early support.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-24T04:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/35/800/400"
+      "reportedAt": "2025-08-24T05:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "36",
       "title": "News #36",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "not_fake",
+      "summary": "City festival returns with record attendance.",
+      "content": "Audiences praise practical effects and character‑driven story.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-24T03:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/36/800/400"
+      "reportedAt": "2025-08-24T04:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "37",
       "title": "News #37",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "fake",
+      "summary": "Underdogs clinch title after dramatic finale.",
+      "content": "Technique changes credited for the record time.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T02:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/37/800/400"
+      "reportedAt": "2025-08-24T03:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "38",
       "title": "News #38",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "not_fake",
+      "summary": "Markets edge to fresh highs on earnings beat.",
+      "content": "Lower waste and better retention after supply‑chain redesigns.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T01:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/38/800/400"
+      "reportedAt": "2025-08-24T02:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "39",
       "title": "News #39",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "not_fake",
+      "summary": "Researchers catalog a vibrant rainforest species.",
+      "content": "Hydrated minerals hint at past streams and habitable conditions.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T00:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/39/800/400"
+      "reportedAt": "2025-08-24T01:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "40",
       "title": "News #40",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "fake",
+      "summary": "Online platform tops one million learners.",
+      "content": "Inquiry‑based projects measure real‑world problem solving.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-23T23:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/40/800/400"
+      "reportedAt": "2025-08-24T00:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "41",
       "title": "News #41",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "not_fake",
+      "summary": "Parliament debates stronger climate legislation.",
+      "content": "Analysts note higher youth turnout, reshaping party priorities.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-23T22:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/41/800/400"
+      "reportedAt": "2025-08-23T23:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "42",
       "title": "News #42",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "not_fake",
+      "summary": "Quantum team reports record coherence stability.",
+      "content": "The model flags rare conditions from scans with high precision.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-23T21:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/42/800/400"
+      "reportedAt": "2025-08-23T22:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "43",
       "title": "News #43",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "fake",
+      "summary": "Trial data shows promising vaccine efficacy.",
+      "content": "Longitudinal data associates the diet with lower cardiovascular risk.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-23T20:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/43/800/400"
+      "reportedAt": "2025-08-23T21:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "44",
       "title": "News #44",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "not_fake",
+      "summary": "Beloved series announces its final season.",
+      "content": "Headliners and new artists boost local business.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-23T19:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/44/800/400"
+      "reportedAt": "2025-08-23T20:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "45",
       "title": "News #45",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "not_fake",
+      "summary": "New downtown sports complex opens to public.",
+      "content": "An overtime goal sealed a historic championship.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-23T18:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/45/800/400"
+      "reportedAt": "2025-08-23T19:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "46",
       "title": "News #46",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "fake",
+      "summary": "AI startup secures major growth investment.",
+      "content": "Indexes rose on stronger guidance despite inflation concerns.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-23T17:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/46/800/400"
+      "reportedAt": "2025-08-23T18:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "47",
       "title": "News #47",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "not_fake",
+      "summary": "Lab boosts solar efficiency with new cells.",
+      "content": "Genetics confirm a new species, guiding conservation.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-23T16:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/47/800/400"
+      "reportedAt": "2025-08-23T17:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "48",
       "title": "News #48",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "not_fake",
+      "summary": "University wins grant for teaching research.",
+      "content": "Modular courses help workers reskill with certificates.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-23T15:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/48/800/400"
+      "reportedAt": "2025-08-23T16:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "49",
       "title": "News #49",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "fake",
+      "summary": "New policy proposal aims to reform national healthcare.",
+      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-23T14:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/49/800/400"
+      "reportedAt": "2025-08-23T15:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "50",
       "title": "News #50",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "not_fake",
+      "summary": "New battery design targets double‑day phone usage.",
+      "content": "Longer qubit coherence advances practical error correction.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-23T13:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/50/800/400"
+      "reportedAt": "2025-08-23T14:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "51",
       "title": "News #51",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Nationwide mental health campaign kicks off.",
+      "content": "Phase‑III results show strong protection and mild side effects.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-23T12:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/51/800/400"
+      "reportedAt": "2025-08-23T13:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "52",
       "title": "News #52",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "fake",
+      "summary": "Blockbuster breaks opening‑weekend records.",
+      "content": "Creators promise a conclusive arc and farewells.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-23T11:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/52/800/400"
+      "reportedAt": "2025-08-23T12:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "53",
       "title": "News #53",
-      "summary": "Short summary for this sports news item.",
-      "content": "Full content goes here describing the claim and evidence for this sports news.",
-      "status": "not_fake",
+      "summary": "National record falls in 100‑meter sprint.",
+      "content": "Courts, pools, and classes open for the community.",
+      "status": "unverified",
       "category": "Sports",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-23T10:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/53/800/400"
+      "reportedAt": "2025-08-23T11:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "54",
       "title": "News #54",
-      "summary": "Short summary for this business news item.",
-      "content": "Full content goes here describing the claim and evidence for this business news.",
-      "status": "not_fake",
+      "summary": "Brands adopt greener models to win loyalty.",
+      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "status": "unverified",
       "category": "Business",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-23T09:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/54/800/400"
+      "reportedAt": "2025-08-23T10:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "55",
       "title": "News #55",
-      "summary": "Short summary for this science news item.",
-      "content": "Full content goes here describing the claim and evidence for this science news.",
-      "status": "fake",
+      "summary": "Rover finds mineral clues of ancient water.",
+      "content": "Tandem cells convert more sunlight; trials begin.",
+      "status": "unverified",
       "category": "Science",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-23T08:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/55/800/400"
+      "reportedAt": "2025-08-23T09:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "56",
       "title": "News #56",
-      "summary": "Short summary for this education news item.",
-      "content": "Full content goes here describing the claim and evidence for this education news.",
-      "status": "not_fake",
+      "summary": "Curriculum refresh centers critical thinking.",
+      "content": "Longitudinal studies will track engagement and outcomes.",
+      "status": "unverified",
       "category": "Education",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-23T07:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/56/800/400"
+      "reportedAt": "2025-08-23T08:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "57",
       "title": "News #57",
-      "summary": "Short summary for this politics news item.",
-      "content": "Full content goes here describing the claim and evidence for this politics news.",
-      "status": "not_fake",
+      "summary": "Election results hint at a shift in voter priorities.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "status": "unverified",
       "category": "Politics",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-23T06:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/57/800/400"
+      "reportedAt": "2025-08-23T07:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "58",
       "title": "News #58",
-      "summary": "Short summary for this technology news item.",
-      "content": "Full content goes here describing the claim and evidence for this technology news.",
-      "status": "fake",
+      "summary": "AI breakthrough promises faster medical diagnostics.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "status": "unverified",
       "category": "Technology",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-23T05:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/58/800/400"
+      "reportedAt": "2025-08-23T06:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "59",
       "title": "News #59",
-      "summary": "Short summary for this health news item.",
-      "content": "Full content goes here describing the claim and evidence for this health news.",
-      "status": "not_fake",
+      "summary": "Mediterranean diet linked to heart health benefits.",
+      "content": "Hotlines and school programs aim for early support.",
+      "status": "unverified",
       "category": "Health",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-23T04:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/59/800/400"
+      "reportedAt": "2025-08-23T05:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "60",
       "title": "News #60",
-      "summary": "Short summary for this entertainment news item.",
-      "content": "Full content goes here describing the claim and evidence for this entertainment news.",
-      "status": "not_fake",
+      "summary": "City festival returns with record attendance.",
+      "content": "Audiences praise practical effects and character‑driven story.",
+      "status": "unverified",
       "category": "Entertainment",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-23T03:00:06.907Z",
-      "imageUrl": "https://picsum.photos/seed/60/800/400"
+      "reportedAt": "2025-08-23T04:47:04.389Z",
+      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     }
   ],
   "comments": [
@@ -666,55 +666,191 @@
       "id": "c1",
       "newsId": "1",
       "isFake": false,
-      "text": "This is verified by official sources",
+      "text": "Evidence and sources look strong.",
       "imageUrl": "",
-      "at": "2025-08-25T14:00:06.907Z"
-    },
-    {
-      "id": "c2",
-      "newsId": "1",
-      "isFake": false,
-      "text": "Multiple fact-checkers confirm this",
-      "imageUrl": "",
-      "at": "2025-08-25T14:00:06.907Z"
-    },
-    {
-      "id": "c3",
-      "newsId": "2",
-      "isFake": true,
-      "text": "No credible sources found",
-      "imageUrl": "",
-      "at": "2025-08-25T14:00:06.907Z"
-    },
-    {
-      "id": "c4",
-      "newsId": "2",
-      "isFake": true,
-      "text": "This has been debunked",
-      "imageUrl": "",
-      "at": "2025-08-25T14:00:06.907Z"
+      "at": "2025-08-25T15:47:04.389Z"
     }
   ],
   "votes": [
     {
       "newsId": "1",
-      "fake": 3,
-      "notFake": 5
+      "fake": 2,
+      "notFake": 6
     },
     {
       "newsId": "2",
-      "fake": 4,
+      "fake": 5,
       "notFake": 1
     },
     {
       "newsId": "3",
       "fake": 2,
-      "notFake": 0
+      "notFake": 2
     },
     {
-      "newsId": "4",
-      "fake": 0,
-      "notFake": 0
+      "newsId": "6",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "7",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "8",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "11",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "12",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "13",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "16",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "17",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "18",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "21",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "22",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "23",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "26",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "27",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "28",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "31",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "32",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "33",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "36",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "37",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "38",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "41",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "42",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "43",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "46",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "47",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "48",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "51",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "52",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "53",
+      "fake": 2,
+      "notFake": 2
+    },
+    {
+      "newsId": "56",
+      "fake": 2,
+      "notFake": 6
+    },
+    {
+      "newsId": "57",
+      "fake": 5,
+      "notFake": 1
+    },
+    {
+      "newsId": "58",
+      "fake": 2,
+      "notFake": 2
     }
   ]
 }

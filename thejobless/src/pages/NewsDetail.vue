@@ -16,12 +16,13 @@ const vote = computed(() => store.majorityVote(id));
 const comments = computed(() => store.commentsOf(id));
 
 const getVoteDisplay = (newsId) => {
-  const voteData = store.majorityVote(newsId);
+  const v = store.majorityVote(newsId);
   return {
-    fake: voteData.fakeVotes || 0,
-    notFake: voteData.notFakeVotes || 0,
-    total: voteData.total || 0,
-    result: voteData.result || 'no_votes'
+    fake: v.fakeVotes || 0,
+    notFake: v.notFakeVotes || 0,
+    total: v.total || 0,
+    result: v.result || "no_votes",
+    percentage: v.percentage || 0
   };
 };
 
@@ -186,8 +187,10 @@ const getStatusBadge = (newsId) => {
                  getVoteDisplay(news.id).result === 'not_fake' ? '✅ Community says: VERIFIED' : 
                  '🤝 Community is split' }}
             </div>
+            <!-- ตรงข้อความ Verdict -->
             <div class="text-sm text-slate-600 mt-2">
-              Based on {{ getVoteDisplay(news.id).total }} community votes
+              {{ getVoteDisplay(news.id).percentage }}% majority
+              ({{ getVoteDisplay(news.id).total }} total votes)
             </div>
           </div>
         </div>
