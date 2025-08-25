@@ -1,169 +1,110 @@
 import { defineStore } from "pinia";
 
+const CACHE_KEY = "db_cache_v1";
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 นาที
+
 export const useNewsStore = defineStore("news", {
   state: () => ({
     all: [],
-    comments: {}, 
+    comments: {},
     votes: {},
-    filter: "all", 
-    pageSize: 10, 
+    filter: "all",
+    pageSize: 10,
     currentPage: 1,
     loading: false,
-    filters: {
-      validation: "all",
-      category: "all",
-      postPerPage: 10
-    }
+    filters: { validation: "all", category: "all", postPerPage: 10 },
   }),
-  
+
   getters: {
-    // กรองข่าวตาม filter ที่เลือก
-    filteredNews: (state) => {
-      let filtered = state.all;
-      
-      // กรองตาม validation status (fake/not_fake)
-      if (state.filter === 'fake') {
-        filtered = filtered.filter(news => news.status === 'fake');
-      } else if (state.filter === 'not_fake') {
-        filtered = filtered.filter(news => news.status === 'not_fake');
+    voteOf: (s) => (id) => s.votes[id] || { fake: 0, notFake: 0 },
+    commentsOf: (s) => (id) => s.comments[id] || [],
+    majorityVote: (s) => (id) => {
+      const v = s.voteOf(id); const total = v.fake + v.notFake;
+      if (!total) return { result: "no_votes", total: 0, fakeVotes: 0, notFakeVotes: 0, percentage: 0 };
+      if (v.fake > v.notFake) return { result: "fake", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: Math.round((v.fake/total)*100) };
+      if (v.notFake > v.fake) return { result: "not_fake", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: Math.round((v.notFake/total)*100) };
+      return { result: "tie", total, fakeVotes: v.fake, notFakeVotes: v.notFake, percentage: 50 };
+    },
+
+    filteredNews: (s) => {
+      let list = s.all;
+      if (s.filter === "fake" || s.filter === "not_fake") {
+        list = list.filter(n => {
+          const mv = s.majorityVote(n.id);
+          if (mv.total > 0) return mv.result === s.filter;
+          return n.status === s.filter;
+        });
       }
-      
-      // กรองตาม category
-      if (state.filters.category !== 'all') {
-        filtered = filtered.filter(news => news.category === state.filters.category);
+      if (s.filters.category !== "all") {
+        list = list.filter(n => n.category === s.filters.category);
       }
-      
-      return filtered;
+      return list;
     },
-    
-    // คำนวณจำนวนหน้าทั้งหมด
-    totalPages: (state) => {
-      return Math.ceil(state.filteredNews.length / state.pageSize);
+    totalPages: (s) => Math.max(1, Math.ceil(s.filteredNews.length / s.pageSize)),
+    paginatedNews: (s) => {
+      const start = (s.currentPage - 1) * s.pageSize;
+      return s.filteredNews.slice(start, start + s.pageSize);
     },
-    
-    // ข่าวที่แสดงในหน้าปัจจุบัน
-    paginatedNews: (state) => {
-      const start = (state.currentPage - 1) * state.pageSize;
-      const end = start + state.pageSize;
-      return state.filteredNews.slice(start, end);
-    },
-    
-    // ข้อมูลการโหวตของข่าว
-    voteOf: (state) => (newsId) => {
-      return state.votes[newsId] || { fake: 0, notFake: 0 };
-    },
-    
-    // คอมเมนต์ของข่าว
-    commentsOf: (state) => (newsId) => {
-      return state.comments[newsId] || [];
-    },
-    
-    // ผลการโหวตแบบ majority
-    majorityVote: (state) => (newsId) => {
-      const vote = state.voteOf(newsId);
-      const total = vote.fake + vote.notFake;
-      
-      if (total === 0) {
-        return { result: 'no_votes', total: 0, fakeVotes: 0, notFakeVotes: 0, percentage: 0 };
-      }
-      
-      const fakePercentage = Math.round((vote.fake / total) * 100);
-      const notFakePercentage = Math.round((vote.notFake / total) * 100);
-      
-      if (vote.fake > vote.notFake) {
-        return { 
-          result: 'fake', 
-          total, 
-          fakeVotes: vote.fake, 
-          notFakeVotes: vote.notFake, 
-          percentage: fakePercentage 
-        };
-      } else if (vote.notFake > vote.fake) {
-        return { 
-          result: 'not_fake', 
-          total, 
-          fakeVotes: vote.fake, 
-          notFakeVotes: vote.notFake, 
-          percentage: notFakePercentage 
-        };
-      } else {
-        return { 
-          result: 'tie', 
-          total, 
-          fakeVotes: vote.fake, 
-          notFakeVotes: vote.notFake, 
-          percentage: 50 
-        };
-      }
-    }
   },
-  
+
   actions: {
-    async fetchNews() {
-      this.loading = true;
-      
+    _assign(news = [], comments = [], votes = []) {
+      this.all = news;
+      this.comments = comments.reduce((acc, c) => {
+        (acc[c.newsId] ??= []).push(c); return acc;
+      }, {});
+      this.votes = votes.reduce((acc, v) => {
+        acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; return acc;
+      }, {});
+    },
+    _hydrateFromCache() {
       try {
-        const res = await fetch("/data/db.json");
-        if (!res.ok) throw new Error('Failed to fetch data');
-        
-        const { news, comments, votes } = await res.json();
-        
-        // ตรวจสอบและกำหนดค่าเริ่มต้น
-        this.all = news || [];
-        this.comments = (comments || []).reduce((acc, c) => {
-          (acc[c.newsId] ??= []).push(c); 
-          return acc;
-        }, {});
-        this.votes = (votes || []).reduce((acc, v) => {
-          acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; 
-          return acc;
-        }, {});
-        
-        // ลด loading time
-        await new Promise(r => setTimeout(r, 200));
-        
-      } catch (error) {
-        console.error("Error fetching news:", error);
-        this.all = [];
-        this.comments = {};
-        this.votes = {};
+        const raw = localStorage.getItem(CACHE_KEY);
+        if (!raw) return false;
+        const { ts, payload } = JSON.parse(raw);
+        if (Date.now() - ts > CACHE_TTL_MS) return false;
+        const { news = [], comments = [], votes = [] } = payload || {};
+        this._assign(news, comments, votes);
+        return true;
+      } catch { return false; }
+    },
+    _saveCache(payload) {
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), payload })); } catch {}
+    },
+
+    async fetchNews({ force = false, useCache = true } = {}) {
+      if (this.all.length && !force) return;
+
+      this.loading = true;
+
+      // แสดงทันทีจาก cache ถ้ามี
+      let hydrated = false;
+      if (useCache) hydrated = this._hydrateFromCache();
+      if (hydrated) { this.loading = false; }
+
+      // รีเฟรชเงียบๆ เบื้องหลัง (ไม่หน่วง UI)
+      try {
+        const res = await fetch("/data/db.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("fetch failed");
+        const { news = [], comments = [], votes = [] } = await res.json();
+        this._assign(news, comments, votes);
+        this._saveCache({ news, comments, votes });
+      } catch (e) {
+        if (!hydrated) console.error("Error fetching news:", e);
       } finally {
         this.loading = false;
       }
     },
-    
-    setFilter(filter) { 
-      this.filter = filter; 
-      this.currentPage = 1; 
-      this._fakeLoad(); 
-    },
-    
-    setPageSize(size) { 
-      this.pageSize = size; 
-      this.currentPage = 1; 
-    },
-    
-    setPage(page) { 
-      this.currentPage = page; 
-    },
-    
-    _fakeLoad() { 
-      this.loading = true; 
-      setTimeout(() => this.loading = false, 150); 
-    },
-    
-    addVoteAndComment(id, isFake, text = "", imageUrl = "") {
+
+    setFilter(f){ this.filter = f; this.currentPage = 1; },
+    setPageSize(n){ this.pageSize = n; this.currentPage = 1; },
+    setPage(p){ this.currentPage = p; },
+
+    addVoteAndComment(id, isFake, text="", imageUrl=""){
       if (!this.votes[id]) this.votes[id] = { fake: 0, notFake: 0 };
       isFake ? this.votes[id].fake++ : this.votes[id].notFake++;
-      
-      if (text || imageUrl) {
-        (this.comments[id] ??= []).push({
-          id: "u" + Date.now(), 
-          isFake, 
-          text, 
-          imageUrl, 
-          at: new Date().toISOString()
-        });
+      if (text || imageUrl){
+        (this.comments[id] ??= []).push({ id: "u"+Date.now(), isFake, text, imageUrl, at: new Date().toISOString() });
       }
     }
   }

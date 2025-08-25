@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "generate-db": "node scripts/generate-db.js",
     "seed": "node ./src/seeds/seed.js",
     "dev": "vite",
     "build": "vite build",

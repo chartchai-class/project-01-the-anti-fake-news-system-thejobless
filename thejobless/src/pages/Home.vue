@@ -30,7 +30,6 @@ const getVoteStatus = (newsId) => {
 
 const getNewsStatus = (newsId) => {
   const voteStatus = getVoteStatus(newsId);
-  const news = store.all.find(n => n.id === newsId);
   
   // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
   if (voteStatus.total > 0) {
@@ -40,6 +39,7 @@ const getNewsStatus = (newsId) => {
   }
   
   // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
+  const news = store.all.find(n => n.id === newsId);
   return news?.status || "not_fake";
 };
 

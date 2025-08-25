@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { onMounted, computed } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 import { useNewsStore } from "../store/news";
 import CommentsList from "../components/CommentsList.vue";
@@ -7,210 +7,210 @@ import CommentsList from "../components/CommentsList.vue";
 const id = useRoute().params.id;
 const store = useNewsStore();
 
-const news = computed(() => store.all.find(n => n.id === id));
-const vote = computed(() => store.votes[id] || { fake: 0, notFake: 0 });
-const comments = computed(() => store.comments[id] || []);
-const majorityVote = computed(() => store.majorityVote(id));
+onMounted(async () => {
+  if (!store.all.length) await store.fetchNews({ useCache: true });
+});
 
-// ฟังก์ชันใหม่: กำหนด status badge ตามเสียงข้างมาก
-const getNewsStatus = computed(() => {
-  const voteStatus = majorityVote.value;
+const news = computed(() => store.all.find(n => n.id === id));
+const vote = computed(() => store.majorityVote(id));
+const comments = computed(() => store.commentsOf(id));
+
+const getVoteDisplay = (newsId) => {
+  const voteData = store.majorityVote(newsId);
+  return {
+    fake: voteData.fakeVotes || 0,
+    notFake: voteData.notFakeVotes || 0,
+    total: voteData.total || 0,
+    result: voteData.result || 'no_votes'
+  };
+};
+
+const getStatusBadge = (newsId) => {
+  const voteStatus = store.majorityVote(newsId);
   
-  // ถ้าไม่มีโหวต ให้ใช้ status เดิมจาก news
-  if (voteStatus.total === 0) {
-    return {
-      text: news.value.status === 'fake' ? 'Fake News' : 'Verified News',
-      class: news.value.status === 'fake' 
-        ? 'bg-red-100 text-red-800 border border-red-200' 
-        : 'bg-green-100 text-green-800 border border-green-200'
-    };
+  if (voteStatus.total > 0) {
+    if (voteStatus.result === 'fake') {
+      return {
+        text: 'Fake News (Community)',
+        class: 'bg-red-50 text-red-700 border-2 border-red-200 shadow-sm'
+      };
+    } else if (voteStatus.result === 'not_fake') {
+      return {
+        text: 'Verified (Community)',
+        class: 'bg-emerald-50 text-emerald-700 border-2 border-emerald-200 shadow-sm'
+      };
+    } else if (voteStatus.result === 'tie') {
+      return {
+        text: 'Split Vote',
+        class: 'bg-amber-50 text-amber-700 border-2 border-amber-200 shadow-sm'
+      };
+    }
   }
   
-  // ถ้ามีโหวต ให้ใช้ผลการโหวตตามเสียงข้างมาก
-  if (voteStatus.result === 'fake') {
+  const news = store.all.find(n => n.id === newsId);
+  if (news?.status === 'fake') {
     return {
-      text: 'Fake News (Community)',
-      class: 'bg-red-100 text-red-800 border border-red-200'
-    };
-  } else if (voteStatus.result === 'not_fake') {
-    return {
-      text: 'Verified (Community)',
-      class: 'bg-green-100 text-green-800 border border-green-200'
+      text: 'Fake News',
+      class: 'bg-red-50 text-red-700 border-2 border-red-200 shadow-sm'
     };
   } else {
     return {
-      text: 'Split Vote',
-      class: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+      text: 'Unverified',
+      class: 'bg-slate-50 text-slate-600 border-2 border-slate-200 shadow-sm'
     };
   }
-});
+};
 </script>
 
 <template>
-  <div v-if="news" class="min-h-screen bg-gray-50">
-    <div class="max-w-5xl mx-auto p-3 sm:p-4 lg:p-6 space-y-4 sm:space-y-6">
-      <!-- Header Section -->
-      <div class="text-center bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">{{ news.title }}</h1>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 lg:gap-6 text-sm sm:text-base text-gray-600">
-          <span class="font-medium">Reporter: {{ news.reporter }}</span>
-          <span class="hidden sm:inline">•</span>
-          <span class="font-medium">{{ new Date(news.reportedAt).toLocaleDateString() }}</span>
-          <span class="hidden sm:inline">•</span>
-          <!-- Status Badge ที่ sync กับผลการโหวต -->
-          <span :class="`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${getNewsStatus.class}`">
-            {{ getNewsStatus.text }}
-          </span>
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <!-- Loading State -->
+    <div v-if="!news" class="flex justify-center items-center min-h-screen">
+      <div class="text-center bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/20">
+        <div class="animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 mx-auto mb-6"></div>
+        <p class="text-slate-600 text-lg font-medium">Loading news...</p>
+      </div>
+    </div>
+
+    <!-- News Content -->
+    <div v-else class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+      <!-- Header Card -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 sm:p-8">
+        <div class="space-y-6">
+          <!-- Status Badge -->
+          <div class="flex justify-start">
+            <span :class="`px-4 py-2 rounded-full text-sm font-bold ${getStatusBadge(news.id).class}`">
+              {{ getStatusBadge(news.id).text }}
+            </span>
+          </div>
+          
+          <!-- Title -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 leading-tight">
+            {{ news.title }}
+          </h1>
+          
+          <!-- Summary -->
+          <p class="text-xl text-slate-600 leading-relaxed max-w-4xl">
+            {{ news.summary }}
+          </p>
+          
+          <!-- Meta Info -->
+          <div class="flex flex-wrap gap-6 text-sm">
+            <div class="flex items-center gap-2 text-slate-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              <span class="font-medium">{{ news.reporter }}</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+              </svg>
+              <span class="font-medium">{{ news.category }}</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-500">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span class="font-medium">{{ new Date(news.reportedAt).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              }) }}</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Image Section -->
-      <div class="w-full bg-white p-2 sm:p-4 rounded-xl shadow-sm border">
+      <!-- News Image -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
         <img 
           :src="news.imageUrl" 
           :alt="news.title"
-          class="w-full h-48 sm:h-64 lg:h-96 object-cover rounded-lg"
+          loading="lazy"
+          class="w-full h-80 sm:h-96 lg:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
         />
       </div>
 
-      <!-- Content Section -->
-      <div class="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-        <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Summary</h2>
-        <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">{{ news.summary }}</p>
-        
-        <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Full Content</h2>
-        <p class="text-base sm:text-lg text-gray-700 leading-relaxed">{{ news.content }}</p>
+      <!-- Full Story -->
+      <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Full Story
+        </h2>
+        <p class="text-lg text-slate-700 leading-relaxed max-w-none">
+          {{ news.content }}
+        </p>
       </div>
 
-      <!-- Community Verdict Section -->
-      <section v-if="majorityVote.total > 0" class="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-        <h2 class="font-bold text-xl sm:text-2xl mb-4 sm:mb-6 text-gray-900">Community Verdict</h2>
-        
-        <div class="text-center p-4 sm:p-6 lg:p-8 rounded-xl" :class="{
-          'bg-red-50 border-2 border-red-200': majorityVote.result === 'fake',
-          'bg-green-50 border-2 border-green-200': majorityVote.result === 'not_fake',
-          'bg-yellow-50 border-2 border-yellow-200': majorityVote.result === 'tie'
-        }">
-          <div class="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">
-            {{ majorityVote.result === 'fake' ? '' : 
-               majorityVote.result === 'not_fake' ? '👍' : '🤝' }}
-          </div>
-          
-          <h3 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3" :class="{
-            'text-red-700': majorityVote.result === 'fake',
-            'text-green-700': majorityVote.result === 'not_fake',
-            'text-yellow-700': majorityVote.result === 'tie'
-          }">
-            {{ majorityVote.result === 'fake' ? 'FAKE NEWS DETECTED!' : 
-               majorityVote.result === 'not_fake' ? 'VERIFIED AS TRUE!' : 
-               'COMMUNITY IS SPLIT' }}
-          </h3>
-          
-          <p class="text-base sm:text-lg text-gray-600 mb-3 sm:mb-4">
-            {{ majorityVote.result === 'fake' ? 'The community has identified this as potentially misleading or false information.' : 
-               majorityVote.result === 'not_fake' ? 'The community has verified this information as accurate and trustworthy.' : 
-               'The community is evenly divided on this news item.' }}
-          </p>
-          
-          <div class="text-xl sm:text-2xl font-bold" :class="{
-            'text-red-600': majorityVote.result === 'fake',
-            'text-green-600': majorityVote.result === 'not_fake',
-            'text-yellow-600': majorityVote.result === 'tie'
-          }">
-            {{ majorityVote.percentage }}% Majority
-          </div>
-          
-          <div class="text-sm text-gray-500 mt-2">
-            Based on {{ majorityVote.total }} community votes
-          </div>
-        </div>
-      </section>
-
-      <!-- Quick Vote Section -->
-      <section class="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-        <h2 class="font-bold text-xl sm:text-2xl mb-4 sm:mb-6 text-gray-900">Quick Vote</h2>
-        <p class="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">What do you think about this news?</p>
-        
-        <div class="flex flex-col lg:flex-row gap-3 sm:gap-4 justify-center">
-          <RouterLink 
-            :to="`/news/${id}/vote?vote=fake`"
-            class="flex-1 max-w-xs bg-red-50 border-2 border-red-200 text-red-700 p-4 sm:p-6 rounded-xl hover:bg-red-100 hover:border-red-300 transition-all duration-200 text-center group"
-          >
-            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-200">👎</div>
-            <h3 class="text-lg sm:text-xl font-bold mb-2">Fake News</h3>
-            <p class="text-sm">I think this is misleading or false</p>
-          </RouterLink>
-          
-          <RouterLink 
-            :to="`/news/${id}/vote?vote=not_fake`"
-            class="flex-1 max-w-xs bg-green-50 border-2 border-green-200 text-green-700 p-4 sm:p-6 rounded-xl hover:bg-green-100 hover:border-green-300 transition-all duration-200 text-center group"
-          >
-            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-200">👍</div>
-            <h3 class="text-lg sm:text-xl font-bold mb-2">Verified News</h3>
-            <p class="text-sm">I think this is accurate and true</p>
-          </RouterLink>
-        </div>
-      </section>
-
       <!-- Votes & Comments Section -->
-      <section class="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-        <h2 class="font-bold text-xl sm:text-2xl mb-4 sm:mb-6 text-gray-900">Votes & Comments</h2>
+      <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+          <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+          Community Verdict & Comments
+        </h2>
         
         <!-- Vote Summary -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 p-4 sm:p-6 bg-gray-50 rounded-xl">
-          <div class="text-center">
-            <div class="text-2xl sm:text-3xl font-bold text-red-600">{{ vote.fake }}</div>
-            <div class="text-sm sm:text-base font-medium text-gray-700">Voted Fake</div>
+        <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-6 mb-8 border border-slate-200">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div class="bg-white/80 rounded-lg p-4 shadow-sm border border-red-100">
+              <div class="text-3xl font-bold text-red-600 mb-2">{{ getVoteDisplay(news.id).fake }}</div>
+              <div class="text-sm font-medium text-slate-600">Voted Fake</div>
+            </div>
+            <div class="bg-white/80 rounded-lg p-4 shadow-sm border border-emerald-100">
+              <div class="text-3xl font-bold text-emerald-600 mb-2">{{ getVoteDisplay(news.id).notFake }}</div>
+              <div class="text-sm font-medium text-slate-600">Voted Verified</div>
+            </div>
+            <div class="bg-white/80 rounded-lg p-4 shadow-sm border border-blue-100">
+              <div class="text-3xl font-bold text-blue-600 mb-2">{{ getVoteDisplay(news.id).total }}</div>
+              <div class="text-sm font-medium text-slate-600">Total Votes</div>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="text-2xl sm:text-3xl font-bold text-green-600">{{ vote.notFake }}</div>
-            <div class="text-sm sm:text-base font-medium text-gray-700">Voted Not Fake</div>
-          </div>
-          <div class="text-center">
-            <div class="text-2xl sm:text-3xl font-bold text-blue-600">{{ vote.fake + vote.notFake }}</div>
-            <div class="text-sm sm:text-base font-medium text-gray-700">Total Votes</div>
+          
+          <!-- Community Verdict -->
+          <div v-if="getVoteDisplay(news.id).total > 0" class="mt-6 p-4 rounded-lg text-center" :class="{
+            'bg-red-50 border-2 border-red-200': getVoteDisplay(news.id).result === 'fake',
+            'bg-emerald-50 border-2 border-emerald-200': getVoteDisplay(news.id).result === 'not_fake',
+            'bg-amber-50 border-2 border-amber-200': getVoteDisplay(news.id).result === 'tie'
+          }">
+            <div class="text-lg font-bold" :class="{
+              'text-red-700': getVoteDisplay(news.id).result === 'fake',
+              'text-emerald-700': getVoteDisplay(news.id).result === 'not_fake',
+              'text-amber-700': getVoteDisplay(news.id).result === 'tie'
+            }">
+              {{ getVoteDisplay(news.id).result === 'fake' ? '👎 Community says: FAKE NEWS' : 
+                 getVoteDisplay(news.id).result === 'not_fake' ? '✅ Community says: VERIFIED' : 
+                 '🤝 Community is split' }}
+            </div>
+            <div class="text-sm text-slate-600 mt-2">
+              Based on {{ getVoteDisplay(news.id).total }} community votes
+            </div>
           </div>
         </div>
 
         <!-- Comments List -->
-        <div v-if="comments.length > 0">
-          <h3 class="font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-gray-800">Community Comments</h3>
+        <div class="mb-8">
+          <h3 class="text-xl font-semibold text-slate-800 mb-4">Community Comments</h3>
           <CommentsList :items="comments" :perPage="5" />
         </div>
         
-        <div v-else class="text-center py-8 sm:py-12 text-gray-500">
-          <div class="text-5xl sm:text-6xl mb-3 sm:mb-4"></div>
-          <p class="text-base sm:text-lg">No comments yet. Be the first to share your thoughts!</p>
-        </div>
-
-        <!-- Add Vote Button -->
-        <div class="mt-6 sm:mt-8 text-center">
+        <!-- Vote Button -->
+        <div class="text-center">
           <RouterLink 
-            :to="`/news/${id}/vote`" 
-            class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-200 font-bold text-base sm:text-lg shadow-md hover:shadow-lg"
+            :to="`/news/${news.id}/vote`" 
+            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white rounded-xl hover:from-blue-700 hover:to-emerald-700 transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            Add Your Vote & Comment
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Add Your Vote
           </RouterLink>
         </div>
-      </section>
-
-      <!-- Back to Home -->
-      <div class="text-center">
-        <RouterLink 
-          to="/" 
-          class="inline-block px-4 sm:px-6 py-2 sm:py-3 text-gray-600 hover:text-gray-800 transition-colors font-medium text-base sm:text-lg"
-        >
-          ← Back to News List
-        </RouterLink>
       </div>
-    </div>
-  </div>
-
-  <!-- Loading State -->
-  <div v-else class="flex justify-center items-center min-h-screen bg-gray-50">
-    <div class="text-center bg-white p-6 sm:p-8 rounded-xl shadow-sm border">
-      <div class="animate-spin rounded-full h-12 sm:h-16 w-12 sm:w-16 border-b-4 border-blue-600 mx-auto mb-4 sm:mb-6"></div>
-      <p class="text-lg sm:text-xl font-medium text-gray-700">Loading news...</p>
     </div>
   </div>
 </template>
