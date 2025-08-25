@@ -8,17 +8,29 @@ export const useNewsStore = defineStore("news", {
     filter: "all", 
     pageSize: 10, 
     currentPage: 1,
-    loading: false
+    loading: false,
+    // เพิ่ม filters ใหม่
+    filters: {
+      validation: "all", // all, fake, not_fake
+      categoriesInclude: [], // categories ที่ต้องการ include
+      categoriesExclude: [], // categories ที่ต้องการ exclude
+      postPerPage: 10
+    }
   }),
   
   actions: {
     async fetchNews() {
       this.loading = true;
-      const res = await fetch("/data/db.json"); // environment call (GET)
+      const res = await fetch("/data/db.json");
       const { news, comments, votes } = await res.json();
 
-      // map เข้ารูปแบบ state
-      this.all = news;
+      // เพิ่ม category ให้กับข่าว
+      const categories = ["Politics", "Technology", "Health", "Entertainment", "Sports", "Business", "Science", "Education"];
+      this.all = news.map((item, index) => ({
+        ...item,
+        category: categories[index % categories.length] // กระจาย categories
+      }));
+
       this.comments = comments.reduce((acc, c) => {
         (acc[c.newsId] ??= []).push(c); 
         return acc;
@@ -28,7 +40,6 @@ export const useNewsStore = defineStore("news", {
         return acc;
       }, {});
       
-      // หน่วงนิดเพื่อเห็น loading (ตาม rubric)
       await new Promise(r => setTimeout(r, 400));
       this.loading = false;
     },
@@ -53,6 +64,60 @@ export const useNewsStore = defineStore("news", {
       setTimeout(() => this.loading = false, 250); 
     },
     
+    // เพิ่ม actions สำหรับ filters
+    setValidationFilter(validation) {
+      this.filters.validation = validation;
+      this.currentPage = 1;
+      this._fakeLoad();
+    },
+    
+    addCategoryInclude(category) {
+      if (category && !this.filters.categoriesInclude.includes(category)) {
+        this.filters.categoriesInclude.push(category);
+        this.currentPage = 1;
+        this._fakeLoad();
+      }
+    },
+    
+    removeCategoryInclude(category) {
+      this.filters.categoriesInclude = this.filters.categoriesInclude.filter(c => c !== category);
+      this.currentPage = 1;
+      this._fakeLoad();
+    },
+    
+    addCategoryExclude(category) {
+      if (category && !this.filters.categoriesExclude.includes(category)) {
+        this.filters.categoriesExclude.push(category);
+        this.currentPage = 1;
+        this._fakeLoad();
+      }
+    },
+    
+    removeCategoryExclude(category) {
+      this.filters.categoriesExclude = this.filters.categoriesExclude.filter(c => c !== category);
+      this.currentPage = 1;
+      this._fakeLoad();
+    },
+    
+    setPostPerPage(count) {
+      this.filters.postPerPage = count;
+      this.pageSize = count;
+      this.currentPage = 1;
+      this._fakeLoad();
+    },
+    
+    resetFilters() {
+      this.filters = {
+        validation: "all",
+        categoriesInclude: [],
+        categoriesExclude: [],
+        postPerPage: 10
+      };
+      this.pageSize = 10;
+      this.currentPage = 1;
+      this._fakeLoad();
+    },
+    
     addVoteAndComment(id, isFake, text = "", imageUrl = "") {
       if (!this.votes[id]) this.votes[id] = { fake: 0, notFake: 0 };
       isFake ? this.votes[id].fake++ : this.votes[id].notFake++;
@@ -73,10 +138,31 @@ export const useNewsStore = defineStore("news", {
     filteredNews: (state) => {
       let filtered = state.all;
       
-      if (state.filter === "fake") {
-        filtered = filtered.filter(news => news.status === "fake");
-      } else if (state.filter === "not_fake") {
-        filtered = filtered.filter(news => news.status === "not_fake");
+      // Filter by validation (majority vote)
+      if (state.filters.validation === "fake") {
+        filtered = filtered.filter(news => {
+          const vote = state.votes[news.id] || { fake: 0, notFake: 0 };
+          return vote.fake > vote.notFake;
+        });
+      } else if (state.filters.validation === "not_fake") {
+        filtered = filtered.filter(news => {
+          const vote = state.votes[news.id] || { fake: 0, notFake: 0 };
+          return vote.notFake > vote.fake;
+        });
+      }
+      
+      // Filter by categories include
+      if (state.filters.categoriesInclude.length > 0) {
+        filtered = filtered.filter(news => 
+          state.filters.categoriesInclude.includes(news.category)
+        );
+      }
+      
+      // Filter by categories exclude
+      if (state.filters.categoriesExclude.length > 0) {
+        filtered = filtered.filter(news => 
+          !state.filters.categoriesExclude.includes(news.category)
+        );
       }
       
       return filtered;
@@ -92,7 +178,6 @@ export const useNewsStore = defineStore("news", {
       return Math.ceil(state.filteredNews.length / state.pageSize);
     },
     
-    // เพิ่ม getter สำหรับ NewsDetail
     voteOf: (state) => (newsId) => {
       return state.votes[newsId] || { fake: 0, notFake: 0 };
     },
@@ -101,7 +186,6 @@ export const useNewsStore = defineStore("news", {
       return state.comments[newsId] || [];
     },
     
-    // getter ใหม่สำหรับผลการโหวตตามเสียงข้างมาก
     majorityVote: (state) => (newsId) => {
       const vote = state.votes[newsId] || { fake: 0, notFake: 0 };
       const total = vote.fake + vote.notFake;
@@ -139,6 +223,12 @@ export const useNewsStore = defineStore("news", {
           total: total
         };
       }
+    },
+    
+    // เพิ่ม getter สำหรับ categories ที่มีอยู่
+    availableCategories: (state) => {
+      const categories = [...new Set(state.all.map(news => news.category))];
+      return categories.sort();
     }
   }
 });

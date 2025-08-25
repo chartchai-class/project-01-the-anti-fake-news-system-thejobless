@@ -1,10 +1,12 @@
 <script setup>
-import { onMounted, computed } from "vue";
+import { onMounted, computed, ref } from "vue";
 import { useNewsStore } from "../store/news";
 import { useRouter } from "vue-router";
+import FilterModal from "../components/FilterModal.vue";
 
 const store = useNewsStore();
 const router = useRouter();
+const isFilterModalOpen = ref(false);
 
 onMounted(() => { 
   if (!store.all.length) store.fetchNews(); 
@@ -24,6 +26,42 @@ const goToNewsDetail = (newsId) => {
 
 const getVoteStatus = (newsId) => {
   return store.majorityVote(newsId);
+};
+
+const getNewsStatus = (newsId) => {
+  const voteStatus = getVoteStatus(newsId);
+  if (voteStatus.total === 0) return news.status; // ใช้ status เดิมถ้าไม่มีโหวต
+  
+  if (voteStatus.result === 'fake') return 'fake';
+  if (voteStatus.result === 'not_fake') return 'not_fake';
+  return 'tie';
+};
+
+const getStatusBadge = (newsId) => {
+  const status = getNewsStatus(newsId);
+  const voteStatus = getVoteStatus(newsId);
+  
+  if (status === 'fake') {
+    return {
+      text: 'Fake News',
+      class: 'bg-red-100 text-red-800 border border-red-200'
+    };
+  } else if (status === 'not_fake') {
+    return {
+      text: 'Verified',
+      class: 'bg-green-100 text-green-800 border border-green-200'
+    };
+  } else if (status === 'tie') {
+    return {
+      text: 'Split Vote',
+      class: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+    };
+  } else {
+    return {
+      text: 'No Votes',
+      class: 'bg-gray-100 text-gray-600 border border-gray-200'
+    };
+  }
 };
 </script>
 
@@ -71,6 +109,14 @@ const getVoteStatus = (newsId) => {
         >
           Verified News
         </button>
+        
+        <!-- Advanced Filter Button -->
+        <button 
+          @click="isFilterModalOpen = true"
+          class="px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-base bg-purple-100 text-purple-700 hover:bg-purple-200 hover:shadow-sm"
+        >
+          🔍 Advanced Filters
+        </button>
       </div>
       
       <div class="flex items-center gap-3">
@@ -84,6 +130,22 @@ const getVoteStatus = (newsId) => {
           <option value="10">10</option>
           <option value="20">20</option>
         </select>
+      </div>
+    </div>
+
+    <!-- Active Filters Display -->
+    <div v-if="store.filters.categoriesInclude.length > 0 || store.filters.categoriesExclude.length > 0 || store.filters.validation !== 'all'" class="bg-white p-4 rounded-xl shadow-sm border">
+      <h3 class="font-medium text-gray-700 mb-3">Active Filters:</h3>
+      <div class="flex flex-wrap gap-2">
+        <span v-if="store.filters.validation !== 'all'" class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+          Validation: {{ store.filters.validation === 'fake' ? 'Fake News' : 'Verified News' }}
+        </span>
+        <span v-for="category in store.filters.categoriesInclude" :key="`include-${category}`" class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+          Include: {{ category }}
+        </span>
+        <span v-for="category in store.filters.categoriesExclude" :key="`exclude-${category}`" class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">
+          Exclude: {{ category }}
+        </span>
       </div>
     </div>
 
@@ -122,17 +184,14 @@ const getVoteStatus = (newsId) => {
         
         <div class="p-6">
           <div class="flex items-center justify-between mb-3">
-            <span 
-              :class="[
-                'px-3 py-1 rounded-full text-sm font-semibold',
-                news.status === 'fake' 
-                  ? 'bg-red-100 text-red-800 border border-red-200' 
-                  : 'bg-green-100 text-green-800 border border-green-200'
-              ]"
-            >
-              {{ news.status === 'fake' ? 'Fake News' : 'Verified' }}
+            <!-- Status Badge ที่เปลี่ยนตามเสียงข้างมาก -->
+            <span :class="`px-3 py-1 rounded-full text-sm font-semibold ${getStatusBadge(news.id).class}`">
+              {{ getStatusBadge(news.id).text }}
             </span>
-            <span class="text-sm font-medium text-gray-600">{{ news.reporter }}</span>
+            <div class="text-right">
+              <span class="text-sm font-medium text-gray-600">{{ news.reporter }}</span>
+              <div class="text-xs text-gray-500">{{ news.category }}</div>
+            </div>
           </div>
           
           <h3 class="font-bold text-xl mb-3 text-gray-900 leading-tight group-hover:text-blue-600 transition-colors duration-200">{{ news.title }}</h3>
@@ -230,6 +289,12 @@ const getVoteStatus = (newsId) => {
       <p class="text-lg text-gray-500">Try adjusting your filters or check back later.</p>
     </div>
   </div>
+
+  <!-- Filter Modal -->
+  <FilterModal 
+    :is-open="isFilterModalOpen" 
+    @close="isFilterModalOpen = false" 
+  />
 </template>
 
 <style scoped>

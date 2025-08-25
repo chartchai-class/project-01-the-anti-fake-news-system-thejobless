@@ -11,6 +11,39 @@ const news = computed(() => store.all.find(n => n.id === id));
 const vote = computed(() => store.votes[id] || { fake: 0, notFake: 0 });
 const comments = computed(() => store.comments[id] || []);
 const majorityVote = computed(() => store.majorityVote(id));
+
+// ฟังก์ชันใหม่: กำหนด status badge ตามเสียงข้างมาก
+const getNewsStatus = computed(() => {
+  const voteStatus = majorityVote.value;
+  
+  // ถ้าไม่มีโหวต ให้ใช้ status เดิมจาก news
+  if (voteStatus.total === 0) {
+    return {
+      text: news.value.status === 'fake' ? 'Fake News' : 'Verified News',
+      class: news.value.status === 'fake' 
+        ? 'bg-red-100 text-red-800 border border-red-200' 
+        : 'bg-green-100 text-green-800 border border-green-200'
+    };
+  }
+  
+  // ถ้ามีโหวต ให้ใช้ผลการโหวตตามเสียงข้างมาก
+  if (voteStatus.result === 'fake') {
+    return {
+      text: 'Fake News (Community)',
+      class: 'bg-red-100 text-red-800 border border-red-200'
+    };
+  } else if (voteStatus.result === 'not_fake') {
+    return {
+      text: 'Verified (Community)',
+      class: 'bg-green-100 text-green-800 border border-green-200'
+    };
+  } else {
+    return {
+      text: 'Split Vote',
+      class: 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+    };
+  }
+});
 </script>
 
 <template>
@@ -24,15 +57,9 @@ const majorityVote = computed(() => store.majorityVote(id));
           <span>•</span>
           <span class="font-medium">{{ new Date(news.reportedAt).toLocaleDateString() }}</span>
           <span>•</span>
-          <span 
-            :class="[
-              'px-3 py-1 rounded-full text-sm font-semibold',
-              news.status === 'fake' 
-                ? 'bg-red-100 text-red-800 border border-red-200' 
-                : 'bg-green-100 text-green-800 border border-green-200'
-            ]"
-          >
-            {{ news.status === 'fake' ? 'Fake News' : 'Verified News' }}
+          <!-- Status Badge ที่ sync กับผลการโหวต -->
+          <span :class="`px-3 py-1 rounded-full text-sm font-semibold ${getNewsStatus.class}`">
+            {{ getNewsStatus.text }}
           </span>
         </div>
       </div>
@@ -65,7 +92,7 @@ const majorityVote = computed(() => store.majorityVote(id));
           'bg-yellow-50 border-2 border-yellow-200': majorityVote.result === 'tie'
         }">
           <div class="text-6xl mb-4">
-            {{ majorityVote.result === 'fake' ? '' : 
+            {{ majorityVote.result === 'fake' ? '👎' : 
                majorityVote.result === 'not_fake' ? '👍' : '🤝' }}
           </div>
           
