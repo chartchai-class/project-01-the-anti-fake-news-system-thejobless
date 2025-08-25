@@ -229,17 +229,11 @@ const getStatusBadge = (newsId) => {
             </div>
           </div>
           
-          <!-- Quick action buttons -->
-          <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-2">
-            <button 
-              @click.stop="goToNewsDetail(news.id)"
-              class="flex-1 bg-blue-50 text-blue-600 py-2 px-2 sm:px-3 rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-100 transition-colors duration-200"
-            >
-              📰 View Details
-            </button>
+          <!-- Vote Now Button Only -->
+          <div class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-100">
             <button 
               @click.stop="router.push(`/news/${news.id}/vote`)"
-              class="flex-1 bg-green-50 text-green-600 py-2 px-2 sm:px-3 rounded-lg text-xs sm:text-sm font-medium hover:bg-green-100 transition-colors duration-200"
+              class="w-full bg-green-50 text-green-600 py-2 px-3 rounded-lg text-sm font-medium hover:bg-green-100 transition-colors duration-200 border border-green-200 hover:border-green-300"
             >
               🗳️ Vote Now
             </button>
