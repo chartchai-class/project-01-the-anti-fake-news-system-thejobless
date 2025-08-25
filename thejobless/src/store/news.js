@@ -9,11 +9,10 @@ export const useNewsStore = defineStore("news", {
     pageSize: 10, 
     currentPage: 1,
     loading: false,
-    // เพิ่ม filters ใหม่
+    // ปรับ filters ใหม่
     filters: {
       validation: "all", // all, fake, not_fake
-      categoriesInclude: [], // categories ที่ต้องการ include
-      categoriesExclude: [], // categories ที่ต้องการ exclude
+      category: "all", // all, Politics, Technology, Health, Entertainment, Sports, Business, Science, Education
       postPerPage: 10
     }
   }),
@@ -64,37 +63,15 @@ export const useNewsStore = defineStore("news", {
       setTimeout(() => this.loading = false, 250); 
     },
     
-    // เพิ่ม actions สำหรับ filters
+    // ปรับ actions สำหรับ filters ใหม่
     setValidationFilter(validation) {
       this.filters.validation = validation;
       this.currentPage = 1;
       this._fakeLoad();
     },
     
-    addCategoryInclude(category) {
-      if (category && !this.filters.categoriesInclude.includes(category)) {
-        this.filters.categoriesInclude.push(category);
-        this.currentPage = 1;
-        this._fakeLoad();
-      }
-    },
-    
-    removeCategoryInclude(category) {
-      this.filters.categoriesInclude = this.filters.categoriesInclude.filter(c => c !== category);
-      this.currentPage = 1;
-      this._fakeLoad();
-    },
-    
-    addCategoryExclude(category) {
-      if (category && !this.filters.categoriesExclude.includes(category)) {
-        this.filters.categoriesExclude.push(category);
-        this.currentPage = 1;
-        this._fakeLoad();
-      }
-    },
-    
-    removeCategoryExclude(category) {
-      this.filters.categoriesExclude = this.filters.categoriesExclude.filter(c => c !== category);
+    setCategoryFilter(category) {
+      this.filters.category = category;
       this.currentPage = 1;
       this._fakeLoad();
     },
@@ -109,8 +86,7 @@ export const useNewsStore = defineStore("news", {
     resetFilters() {
       this.filters = {
         validation: "all",
-        categoriesInclude: [],
-        categoriesExclude: [],
+        category: "all",
         postPerPage: 10
       };
       this.pageSize = 10;
@@ -151,17 +127,10 @@ export const useNewsStore = defineStore("news", {
         });
       }
       
-      // Filter by categories include
-      if (state.filters.categoriesInclude.length > 0) {
+      // Filter by category
+      if (state.filters.category !== "all") {
         filtered = filtered.filter(news => 
-          state.filters.categoriesInclude.includes(news.category)
-        );
-      }
-      
-      // Filter by categories exclude
-      if (state.filters.categoriesExclude.length > 0) {
-        filtered = filtered.filter(news => 
-          !state.filters.categoriesExclude.includes(news.category)
+          news.category === state.filters.category
         );
       }
       

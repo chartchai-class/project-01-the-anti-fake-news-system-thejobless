@@ -30,7 +30,7 @@ const getVoteStatus = (newsId) => {
 
 const getNewsStatus = (newsId) => {
   const voteStatus = getVoteStatus(newsId);
-  if (voteStatus.total === 0) return news.status; // ใช้ status เดิมถ้าไม่มีโหวต
+  if (voteStatus.total === 0) return news.status;
   
   if (voteStatus.result === 'fake') return 'fake';
   if (voteStatus.result === 'not_fake') return 'not_fake';
@@ -138,17 +138,14 @@ const getStatusBadge = (newsId) => {
     </div>
 
     <!-- Active Filters Display -->
-    <div v-if="store.filters.categoriesInclude.length > 0 || store.filters.categoriesExclude.length > 0 || store.filters.validation !== 'all'" class="bg-white p-3 sm:p-4 rounded-xl shadow-sm border">
+    <div v-if="store.filters.validation !== 'all' || store.filters.category !== 'all'" class="bg-white p-3 sm:p-4 rounded-xl shadow-sm border">
       <h3 class="font-medium text-gray-700 mb-2 sm:mb-3 text-sm sm:text-base">Active Filters:</h3>
       <div class="flex flex-wrap gap-2">
         <span v-if="store.filters.validation !== 'all'" class="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
           Validation: {{ store.filters.validation === 'fake' ? 'Fake News' : 'Verified News' }}
         </span>
-        <span v-for="category in store.filters.categoriesInclude" :key="`include-${category}`" class="bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-          Include: {{ category }}
-        </span>
-        <span v-for="category in store.filters.categoriesExclude" :key="`exclude-${category}`" class="bg-red-100 text-red-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-          Exclude: {{ category }}
+        <span v-if="store.filters.category !== 'all'" class="bg-green-100 text-green-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
+          Category: {{ store.filters.category }}
         </span>
       </div>
     </div>

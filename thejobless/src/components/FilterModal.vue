@@ -9,24 +9,6 @@ const props = defineProps({
 const emit = defineEmits(['close']);
 
 const store = useNewsStore();
-const newCategoryInclude = ref('');
-const newCategoryExclude = ref('');
-
-const availableCategories = computed(() => store.availableCategories);
-
-const addCategoryInclude = () => {
-  if (newCategoryInclude.value.trim()) {
-    store.addCategoryInclude(newCategoryInclude.value.trim());
-    newCategoryInclude.value = '';
-  }
-};
-
-const addCategoryExclude = () => {
-  if (newCategoryExclude.value.trim()) {
-    store.addCategoryExclude(newCategoryExclude.value.trim());
-    newCategoryExclude.value = '';
-  }
-};
 
 const resetFilters = () => {
   store.resetFilters();
@@ -61,87 +43,39 @@ const closeModal = () => {
           </select>
         </div>
         
-        <!-- Category Include -->
+        <!-- Category Filter -->
         <div>
-          <label class="block text-sm sm:text-base font-medium text-gray-700 mb-2">Category (include)</label>
-          <div class="flex gap-2 mb-2">
-            <input 
-              v-model="newCategoryInclude"
-              @keyup.enter="addCategoryInclude"
-              type="text" 
-              placeholder="Type to add..."
-              class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-base focus:border-blue-500 focus:outline-none"
-            />
-            <button 
-              @click="addCategoryInclude"
-              class="bg-blue-100 text-blue-600 px-3 sm:px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors text-sm sm:text-base"
-            >
-              Add
-            </button>
-          </div>
-          <div v-if="store.filters.categoriesInclude.length > 0" class="flex flex-wrap gap-2">
-            <span 
-              v-for="category in store.filters.categoriesInclude" 
-              :key="category"
-              class="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-1 sm:gap-2"
-            >
-              {{ category }}
-              <button 
-                @click="store.removeCategoryInclude(category)"
-                class="text-blue-600 hover:text-blue-800 text-sm"
-              >
-                ×
-              </button>
-            </span>
-          </div>
-        </div>
-        
-        <!-- Category Exclude -->
-        <div>
-          <label class="block text-sm sm:text-base font-medium text-gray-700 mb-2">Category (exclude)</label>
-          <div class="flex gap-2 mb-2">
-            <input 
-              v-model="newCategoryExclude"
-              @keyup.enter="addCategoryExclude"
-              type="text" 
-              placeholder="Type to add..."
-              class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-base focus:border-blue-500 focus:outline-none"
-            />
-            <button 
-              @click="addCategoryExclude"
-              class="bg-blue-100 text-blue-600 px-3 sm:px-4 py-2 rounded-lg hover:bg-blue-200 transition-colors text-sm sm:text-base"
-            >
-              Add
-            </button>
-          </div>
-          <div v-if="store.filters.categoriesExclude.length > 0" class="flex flex-wrap gap-2">
-            <span 
-              v-for="category in store.filters.categoriesExclude" 
-              :key="category"
-              class="bg-red-100 text-red-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm flex items-center gap-1 sm:gap-2"
-            >
-              {{ category }}
-              <button 
-                @click="store.removeCategoryExclude(category)"
-                class="text-red-600 hover:text-red-800 text-sm"
-              >
-                ×
-              </button>
-            </span>
-          </div>
+          <label class="block text-sm sm:text-base font-medium text-gray-700 mb-2">Category</label>
+          <select 
+            v-model="store.filters.category"
+            @change="store.setCategoryFilter(store.filters.category)"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-base focus:border-blue-500 focus:outline-none"
+          >
+            <option value="all">All Categories</option>
+            <option value="Politics">Politics</option>
+            <option value="Technology">Technology</option>
+            <option value="Health">Health</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Sports">Sports</option>
+            <option value="Business">Business</option>
+            <option value="Science">Science</option>
+            <option value="Education">Education</option>
+          </select>
         </div>
         
         <!-- Post per page -->
         <div>
           <label class="block text-sm sm:text-base font-medium text-gray-700 mb-2">Post per page</label>
-          <input 
+          <select 
             v-model.number="store.filters.postPerPage"
             @change="store.setPostPerPage(store.filters.postPerPage)"
-            type="number" 
-            min="1" 
-            max="50"
             class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-base focus:border-blue-500 focus:outline-none"
-          />
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
         </div>
       </div>
       
