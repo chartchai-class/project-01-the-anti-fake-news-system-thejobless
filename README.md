@@ -58,7 +58,6 @@ npm run preview
 - `build`: build production assets to `dist/`
 - `preview`: preview the `dist/` build
 - `generate-db`: generate `public/data/db.json` from `scripts/generate-db.js`
-- `seed`: optional example seeder at `src/seeds/seed.js`
 
 ---
 
