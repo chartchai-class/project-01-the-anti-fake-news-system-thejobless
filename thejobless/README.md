@@ -1,5 +1,76 @@
-# Vue 3 + Vite
+## The Jobless – News Verification SPA
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A Vue 3 single‑page app to browse news, filter Fake/Verified, view details, vote, and read community comments. Mock data is served from `public/data/db.json` so it works the same on Vite and Vercel.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+### Group Members
+- Name Surname (Student ID)
+- Name Surname (Student ID)
+- Name Surname (Student ID)
+
+### Tech Stack
+- Vue 3 + Vite
+- Pinia (state management)
+- Vue Router
+- Tailwind CSS
+- Deployment: Vercel
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js LTS ≥ 18
+- npm
+
+### Install
+```bash
+npm install
+```
+
+### Generate mock data (60 records: categories, images, content)
+```bash
+npm run generate-db
+```
+A file will be created at `public/data/db.json` and fetched via `/data/db.json`.
+
+### Development
+```bash
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+```
+
+### Preview (serve the production build locally)
+```bash
+npm run preview
+```
+
+---
+
+## Available Scripts
+- `dev`: start Vite dev server
+- `build`: build production assets to `dist/`
+- `preview`: preview the `dist/` build
+- `generate-db`: generate `public/data/db.json` from `scripts/generate-db.js`
+- `seed`: optional example seeder at `src/seeds/seed.js`
+
+---
+
+## Features
+- Filter: All / Fake / Verified + Category selector
+- Pagination with page‑size selector and auto scroll‑to‑top
+- Loading skeletons
+- News details: image, summary, full content, votes with majority percentage, comments (paginated)
+- Voting and commenting stored in Pinia (client‑side), combined with mock data
+- Stable images with fallback if an image fails to load
+- Responsive white theme, readable typography
+
+## Deploy (Vercel)
+- Import the repository in Vercel
+- Framework Preset: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- The `public/` folder (including `public/data/db.json`) is copied automatically
