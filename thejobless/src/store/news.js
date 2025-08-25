@@ -9,89 +9,147 @@ export const useNewsStore = defineStore("news", {
     pageSize: 10, 
     currentPage: 1,
     loading: false,
-    // ปรับ filters ใหม่
     filters: {
-      validation: "all", // all, fake, not_fake
-      category: "all", // all, Politics, Technology, Health, Entertainment, Sports, Business, Science, Education
+      validation: "all",
+      category: "all",
       postPerPage: 10
     }
   }),
   
+  getters: {
+    // กรองข่าวตาม filter ที่เลือก
+    filteredNews: (state) => {
+      let filtered = state.all;
+      
+      // กรองตาม validation status (fake/not_fake)
+      if (state.filter === 'fake') {
+        filtered = filtered.filter(news => news.status === 'fake');
+      } else if (state.filter === 'not_fake') {
+        filtered = filtered.filter(news => news.status === 'not_fake');
+      }
+      
+      // กรองตาม category
+      if (state.filters.category !== 'all') {
+        filtered = filtered.filter(news => news.category === state.filters.category);
+      }
+      
+      return filtered;
+    },
+    
+    // คำนวณจำนวนหน้าทั้งหมด
+    totalPages: (state) => {
+      return Math.ceil(state.filteredNews.length / state.pageSize);
+    },
+    
+    // ข่าวที่แสดงในหน้าปัจจุบัน
+    paginatedNews: (state) => {
+      const start = (state.currentPage - 1) * state.pageSize;
+      const end = start + state.pageSize;
+      return state.filteredNews.slice(start, end);
+    },
+    
+    // ข้อมูลการโหวตของข่าว
+    voteOf: (state) => (newsId) => {
+      return state.votes[newsId] || { fake: 0, notFake: 0 };
+    },
+    
+    // คอมเมนต์ของข่าว
+    commentsOf: (state) => (newsId) => {
+      return state.comments[newsId] || [];
+    },
+    
+    // ผลการโหวตแบบ majority
+    majorityVote: (state) => (newsId) => {
+      const vote = state.voteOf(newsId);
+      const total = vote.fake + vote.notFake;
+      
+      if (total === 0) {
+        return { result: 'no_votes', total: 0, fakeVotes: 0, notFakeVotes: 0, percentage: 0 };
+      }
+      
+      const fakePercentage = Math.round((vote.fake / total) * 100);
+      const notFakePercentage = Math.round((vote.notFake / total) * 100);
+      
+      if (vote.fake > vote.notFake) {
+        return { 
+          result: 'fake', 
+          total, 
+          fakeVotes: vote.fake, 
+          notFakeVotes: vote.notFake, 
+          percentage: fakePercentage 
+        };
+      } else if (vote.notFake > vote.fake) {
+        return { 
+          result: 'not_fake', 
+          total, 
+          fakeVotes: vote.fake, 
+          notFakeVotes: vote.notFake, 
+          percentage: notFakePercentage 
+        };
+      } else {
+        return { 
+          result: 'tie', 
+          total, 
+          fakeVotes: vote.fake, 
+          notFakeVotes: vote.notFake, 
+          percentage: 50 
+        };
+      }
+    }
+  },
+  
   actions: {
     async fetchNews() {
       this.loading = true;
-      const res = await fetch("/data/db.json");
-      const { news, comments, votes } = await res.json();
-
-      // เพิ่ม category ให้กับข่าว
-      const categories = ["Politics", "Technology", "Health", "Entertainment", "Sports", "Business", "Science", "Education"];
-      this.all = news.map((item, index) => ({
-        ...item,
-        category: categories[index % categories.length] // กระจาย categories
-      }));
-
-      this.comments = comments.reduce((acc, c) => {
-        (acc[c.newsId] ??= []).push(c); 
-        return acc;
-      }, {});
-      this.votes = votes.reduce((acc, v) => {
-        acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; 
-        return acc;
-      }, {});
       
-      await new Promise(r => setTimeout(r, 400));
-      this.loading = false;
+      try {
+        const res = await fetch("/data/db.json");
+        if (!res.ok) throw new Error('Failed to fetch data');
+        
+        const { news, comments, votes } = await res.json();
+        
+        // ตรวจสอบและกำหนดค่าเริ่มต้น
+        this.all = news || [];
+        this.comments = (comments || []).reduce((acc, c) => {
+          (acc[c.newsId] ??= []).push(c); 
+          return acc;
+        }, {});
+        this.votes = (votes || []).reduce((acc, v) => {
+          acc[v.newsId] = { fake: v.fake, notFake: v.notFake }; 
+          return acc;
+        }, {});
+        
+        // ลด loading time
+        await new Promise(r => setTimeout(r, 200));
+        
+      } catch (error) {
+        console.error("Error fetching news:", error);
+        this.all = [];
+        this.comments = {};
+        this.votes = {};
+      } finally {
+        this.loading = false;
+      }
     },
     
-    setFilter(f) { 
-      this.filter = f; 
+    setFilter(filter) { 
+      this.filter = filter; 
       this.currentPage = 1; 
       this._fakeLoad(); 
     },
     
-    setPageSize(n) { 
-      this.pageSize = n; 
+    setPageSize(size) { 
+      this.pageSize = size; 
       this.currentPage = 1; 
     },
     
-    setPage(p) { 
-      this.currentPage = p; 
+    setPage(page) { 
+      this.currentPage = page; 
     },
     
     _fakeLoad() { 
       this.loading = true; 
-      setTimeout(() => this.loading = false, 250); 
-    },
-    
-    // ปรับ actions สำหรับ filters ใหม่
-    setValidationFilter(validation) {
-      this.filters.validation = validation;
-      this.currentPage = 1;
-      this._fakeLoad();
-    },
-    
-    setCategoryFilter(category) {
-      this.filters.category = category;
-      this.currentPage = 1;
-      this._fakeLoad();
-    },
-    
-    setPostPerPage(count) {
-      this.filters.postPerPage = count;
-      this.pageSize = count;
-      this.currentPage = 1;
-      this._fakeLoad();
-    },
-    
-    resetFilters() {
-      this.filters = {
-        validation: "all",
-        category: "all",
-        postPerPage: 10
-      };
-      this.pageSize = 10;
-      this.currentPage = 1;
-      this._fakeLoad();
+      setTimeout(() => this.loading = false, 150); 
     },
     
     addVoteAndComment(id, isFake, text = "", imageUrl = "") {
@@ -107,97 +165,6 @@ export const useNewsStore = defineStore("news", {
           at: new Date().toISOString()
         });
       }
-    }
-  },
-  
-  getters: {
-    filteredNews: (state) => {
-      let filtered = state.all;
-      
-      // Filter by validation (majority vote)
-      if (state.filters.validation === "fake") {
-        filtered = filtered.filter(news => {
-          const vote = state.votes[news.id] || { fake: 0, notFake: 0 };
-          return vote.fake > vote.notFake;
-        });
-      } else if (state.filters.validation === "not_fake") {
-        filtered = filtered.filter(news => {
-          const vote = state.votes[news.id] || { fake: 0, notFake: 0 };
-          return vote.notFake > vote.fake;
-        });
-      }
-      
-      // Filter by category
-      if (state.filters.category !== "all") {
-        filtered = filtered.filter(news => 
-          news.category === state.filters.category
-        );
-      }
-      
-      return filtered;
-    },
-    
-    paginatedNews: (state) => {
-      const start = (state.currentPage - 1) * state.pageSize;
-      const end = start + state.pageSize;
-      return state.filteredNews.slice(start, end);
-    },
-    
-    totalPages: (state) => {
-      return Math.ceil(state.filteredNews.length / state.pageSize);
-    },
-    
-    voteOf: (state) => (newsId) => {
-      return state.votes[newsId] || { fake: 0, notFake: 0 };
-    },
-    
-    commentsOf: (state) => (newsId) => {
-      return state.comments[newsId] || [];
-    },
-    
-    majorityVote: (state) => (newsId) => {
-      const vote = state.votes[newsId] || { fake: 0, notFake: 0 };
-      const total = vote.fake + vote.notFake;
-      
-      if (total === 0) return { result: 'no_votes', percentage: 0, leading: null };
-      
-      const fakePercentage = (vote.fake / total) * 100;
-      const notFakePercentage = (vote.notFake / total) * 100;
-      
-      if (vote.fake > vote.notFake) {
-        return { 
-          result: 'fake', 
-          percentage: Math.round(fakePercentage), 
-          leading: 'fake',
-          fakeVotes: vote.fake,
-          notFakeVotes: vote.notFake,
-          total: total
-        };
-      } else if (vote.notFake > vote.fake) {
-        return { 
-          result: 'not_fake', 
-          percentage: Math.round(notFakePercentage), 
-          leading: 'not_fake',
-          fakeVotes: vote.fake,
-          notFakeVotes: vote.notFake,
-          total: total
-        };
-      } else {
-        return { 
-          result: 'tie', 
-          percentage: 50, 
-          leading: null,
-          fakeVotes: vote.fake,
-          notFakeVotes: vote.notFake,
-          total: total
-        };
-      }
-    },
-    
-    // เพิ่ม getter สำหรับ categories ที่มีอยู่
-    availableCategories: (state) => {
-      const categories = [...new Set(state.all.map(news => news.category))];
-      return categories.sort();
     }
   }
 });

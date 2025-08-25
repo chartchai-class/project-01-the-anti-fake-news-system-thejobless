@@ -30,11 +30,17 @@ const getVoteStatus = (newsId) => {
 
 const getNewsStatus = (newsId) => {
   const voteStatus = getVoteStatus(newsId);
-  if (voteStatus.total === 0) return news.status;
+  const news = store.all.find(n => n.id === newsId);
   
-  if (voteStatus.result === 'fake') return 'fake';
-  if (voteStatus.result === 'not_fake') return 'not_fake';
-  return 'tie';
+  // ถ้ามีการโหวตแล้ว ให้ใช้ผลการโหวต
+  if (voteStatus.total > 0) {
+    if (voteStatus.result === 'fake') return 'fake';
+    if (voteStatus.result === 'not_fake') return 'not_fake';
+    return 'tie';
+  }
+  
+  // ถ้ายังไม่มีใครโหวต ให้ใช้ status เดิมจากข่าว
+  return news?.status || "not_fake";
 };
 
 const getStatusBadge = (newsId) => {
