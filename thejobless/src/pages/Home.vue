@@ -130,7 +130,7 @@ const onPageSizeChange = (e) => {
   <div class="min-h-screen bg-gray-50 space-y-4 sm:space-y-6 p-3 sm:p-6">
     <!-- Header -->
     <div class="text-center bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm border">
-      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">The Jobless News</h1>
+      <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">Billboard News</h1>
       <p class="text-sm sm:text-base lg:text-lg text-gray-600">Fact-checking platform for news verification</p>
     </div>
 
