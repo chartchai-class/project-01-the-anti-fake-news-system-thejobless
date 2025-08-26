@@ -76,3 +76,45 @@ npm run preview
 - Build Command: `npm run build`
 - Output Directory: `dist`
 - The `public/` folder (including `public/data/db.json`) is copied automatically
+
+นี่คือการตั้งค่าที่ต้องมีสำหรับ deploy ขึ้น Vercel (Vue 3 + Vite + Vue Router + static data)
+
+### 1) ตรวจ package.json
+- ต้องมีสคริปต์เหล่านี้แล้ว
+```json
+<code_block_to_apply_changes_from>
+```
+
+### 2) เพิ่ม SPA rewrite (สำคัญมากสำหรับ Vue Router)
+สร้างไฟล์ `vercel.json` ที่รากโปรเจกต์
+```json:thejobless/vercel.json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+- ป้องกัน 404 เวลา refresh ที่เส้นทางเช่น `/news/1`
+
+### 3) ตรวจข้อมูล mock
+- ไฟล์ต้องอยู่ที่ `public/data/db.json`
+- โค้ด fetch ใช้ `/data/db.json` (ถูกแล้ว) → Vercel จะเสิร์ฟจากโฟลเดอร์ `public` อัตโนมัติ
+
+### 4) ตั้งค่าใน Vercel (UI)
+- New Project → เลือก repo
+- Framework Preset: Vite
+- Root Directory: `./`
+- Build & Output:
+  - Build Command: `npm run build`
+  - Output Directory: `dist`
+- Deploy
+
+### 5) (ทางเลือก) ใช้ CLI
+```bash
+npm i -g vercel
+vercel           # ครั้งแรก (preview)
+vercel --prod    # deploy production
+```
+
+เสร็จแล้ว ลองเปิดลิงก์ production:
+- หน้าแรก (Home)
+- เส้นทางย่อย `/news/:id` (ทดสอบ refresh ด้วย)  
+ถ้าทุกอย่างถูกต้อง จะไม่ขึ้น 404 และ `/data/db.json` โหลดได้จากโดเมน production ทันที.
