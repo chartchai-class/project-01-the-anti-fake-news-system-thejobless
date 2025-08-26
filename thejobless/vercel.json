@@ -1,8 +1,5 @@
 {
-  "scripts": {
-    "generate-db": "node scripts/generate-db.js",
-    "build": "node scripts/generate-db.js && vite build",
-    "dev": "vite",
-    "preview": "vite preview"
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
