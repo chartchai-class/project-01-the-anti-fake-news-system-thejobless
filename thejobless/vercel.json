@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/api/protect", "destination": "/api/protect" },
+    { "source": "/(.*)", "destination": "/api/protect?path=$1" }
+  ]
 }
