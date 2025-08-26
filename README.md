@@ -20,47 +20,53 @@
 - Deployment: Vercel
 
 ## Features
-- Filter: All / Fake / Verified + Category selector
-- Pagination with page‑size selector and auto scroll‑to‑top
-- Loading skeletons
-- News details: image, summary, full content, votes with majority percentage, comments (paginated)
-- Voting and commenting stored in Pinia (client‑side), combined with mock data
-- Stable images with fallback if an image fails to load
+- **News Management**: 60+ articles with pagination and configurable page sizes
+- **Category Filtering**: Filter by Space, Weather, Geology, Environment, Science, Technology  
+- **Status Filtering**: Filter by All, Fake News, Verified News based on community voting
+- **News Detail Pages**: Full news view with comprehensive content and metadata
+- **Community Voting**: Real-time voting system for news authenticity (Fake/Not Fake)
+- **Vote Results**: Live percentage display and community consensus indicators
+- **Community Comments**: Paginated comment system with evidence sharing
+- **Vote Page**: Dedicated page for user voting and evidence submission
+- **Responsive Design**: Mobile-first approach using Tailwind CSS
+- **Modern UI**: Clean white theme with excellent typography and readability
+- **Interactive Elements**: Hover effects, clickable cards, and smooth transitions
+- **Performance**: Lazy loading, caching, and optimized data fetching
 
 ---
 ### Project structure
 ```text
 thejobless/
-├─ .vercel/                      # Vercel project metadata
-├─ node_modules/
-├─ public/
-│  └─ data/
-│     └─ db.json                 # Mock data served at /data/db.json
-├─ scripts/
-│  └─ generate-db.js             # Generate public/data/db.json
-├─ src/
-│  ├─ assets/                    # Static assets (if any)
-│  ├─ components/
-│  │  └─ CommentsList.vue
-│  ├─ pages/
-│  │  ├─ Home.vue                # List + filters + pagination
-│  │  ├─ NewsDetail.vue          # Full detail + votes + comments (paginated)
-│  │  └─ VotePage.vue            # Vote + optional evidence URL
-│  ├─ router/
-│  │  └─ index.js                # Routes: / , /news/:id , /news/:id/vote
-│  ├─ store/
-│  │  └─ news.js                 # Pinia store (news/votes/comments/filters)
-│  ├─ style.css                  # Tailwind entry
-│  ├─ App.vue
-│  └─ main.js                    # Bootstrap + Pinia + Router + Vercel analytics/insights
-├─ index.html                    # Vite entry (mounts #app)
-├─ vercel.json                   # SPA rewrite for Vue Router
-├─ vite.config.js
-├─ tailwind.config.js
-├─ postcss.config.js
-├─ package.json                  # Scripts & deps
-├─ package-lock.json
-└─ .gitignore
+├── src/                          # Source code
+│   ├── components/               # Reusable UI components
+│   │   ├── CommentsList.vue        # Paginated comments display
+│   │   └── FilterModal.vue         # Advanced filtering modal
+│   ├── pages/                   # Page components
+│   │   ├── Home.vue                # News listing with filters & pagination
+│   │   ├── NewsDetail.vue          # Detailed news view with comments
+│   │   └── VotePage.vue            # User voting and commenting
+│   ├── store/                   # Pinia state management
+│   │   └── news.js                 # News data, filters, votes, comments
+│   ├──  router/                  # Vue Router configuration
+│   │   └── index.js                # Route definitions
+│   ├── assets/                  # Static assets
+│   ├── App.vue                     # Root component
+│   ├── main.js                     # Application entry point
+│   └── style.css                   # Global styles & Tailwind CSS
+├── public/                      # Public assets
+│   └──  data/                    # Mock data
+│       └── db.json                 # 60 news items with comments & votes
+├── scripts/                     # Build & data generation
+│   └── generate-db.js              # Mock data generator script
+├── node_modules/                # Dependencies
+├── package.json                     # Project dependencies & scripts
+├── package-lock.json               # Locked dependency versions
+├── vite.config.js                  # Vite build configuration
+├── tailwind.config.js              # Tailwind CSS configuration
+├── postcss.config.js               # PostCSS configuration
+├── vercel.json                     # Vercel deployment config
+├── .gitignore                      # Git ignore patterns
+└── index.html                      # HTML entry point
 ```
 ---
 ## Getting Started
