@@ -26,7 +26,6 @@
 - News details: image, summary, full content, votes with majority percentage, comments (paginated)
 - Voting and commenting stored in Pinia (client‑side), combined with mock data
 - Stable images with fallback if an image fails to load
-- Responsive white theme, readable typography
 
 ---
 
