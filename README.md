@@ -3,11 +3,13 @@
 
 ## The Jobless – News Verification SPA
 
-A Vue 3 single‑page app to browse news, filter Fake/Verified, view details, vote, and read community comments. Mock data is served from `public/data/db.json` so it works the same on Vite and Vercel.
+## Link
+  * Deployed site(Vercel) : https://project-01-the-anti-fake-news-syste-puce.vercel.app/
+  * Demo video :
 
 ### Group Members
 - Name Surname (Student ID)
-- 662115026 Nawapon Sriboonreang (SEC 702)
+- 662115026-Nawapon Sriboonreang (SEC 702)
 - Name Surname (Student ID)
 
 ### Tech Stack
@@ -16,6 +18,15 @@ A Vue 3 single‑page app to browse news, filter Fake/Verified, view details, vo
 - Vue Router
 - Tailwind CSS
 - Deployment: Vercel
+
+## Features
+- Filter: All / Fake / Verified + Category selector
+- Pagination with page‑size selector and auto scroll‑to‑top
+- Loading skeletons
+- News details: image, summary, full content, votes with majority percentage, comments (paginated)
+- Voting and commenting stored in Pinia (client‑side), combined with mock data
+- Stable images with fallback if an image fails to load
+- Responsive white theme, readable typography
 
 ---
 
@@ -60,26 +71,3 @@ npm run preview
 - `generate-db`: generate `public/data/db.json` from `scripts/generate-db.js`
 
 ---
-
-## Features
-- Filter: All / Fake / Verified + Category selector
-- Pagination with page‑size selector and auto scroll‑to‑top
-- Loading skeletons
-- News details: image, summary, full content, votes with majority percentage, comments (paginated)
-- Voting and commenting stored in Pinia (client‑side), combined with mock data
-- Stable images with fallback if an image fails to load
-- Responsive white theme, readable typography
-
-## Deploy (Vercel)
-- Import the repository in Vercel
-- Framework Preset: Vite
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- The `public/` folder (including `public/data/db.json`) is copied automatically
-
-```
-
-เสร็จแล้ว ลองเปิดลิงก์ production:
-- หน้าแรก (Home)
-- เส้นทางย่อย `/news/:id` (ทดสอบ refresh ด้วย)  
-ถ้าทุกอย่างถูกต้อง จะไม่ขึ้น 404 และ `/data/db.json` โหลดได้จากโดเมน production ทันที.
