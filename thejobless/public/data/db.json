@@ -4,661 +4,661 @@
       "id": "1",
       "title": "News #1",
       "summary": "New policy proposal aims to reform national healthcare.",
-      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals. The comprehensive reform package includes provisions for mental health services and prescription drug cost controls, addressing long-standing gaps in the current system.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-25T15:47:04.388Z",
+      "reportedAt": "2025-08-26T12:04:33.477Z",
       "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "2",
       "title": "News #2",
       "summary": "New battery design targets double‑day phone usage.",
-      "content": "Longer qubit coherence advances practical error correction.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway. The new battery chemistry offers twice the energy density of current lithium-ion batteries while maintaining safety standards and reducing production costs.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-25T14:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T11:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "3",
       "title": "News #3",
       "summary": "Nationwide mental health campaign kicks off.",
-      "content": "Phase‑III results show strong protection and mild side effects.",
+      "content": "Hotlines and school programs aim for early support. The initiative includes 24/7 crisis intervention services, mental health education in schools, and training for teachers to recognize warning signs of depression and anxiety.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-25T13:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T10:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "4",
       "title": "News #4",
       "summary": "Blockbuster breaks opening‑weekend records.",
-      "content": "Creators promise a conclusive arc and farewells.",
+      "content": "Audiences praise practical effects and character‑driven story. The film grossed $180 million domestically in its first three days, surpassing previous records for the genre while earning critical acclaim for its innovative storytelling approach.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-25T12:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T09:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "5",
       "title": "News #5",
       "summary": "National record falls in 100‑meter sprint.",
-      "content": "Courts, pools, and classes open for the community.",
+      "content": "Technique changes credited for the record time. The sprinter's new training regimen focused on explosive starts and improved running mechanics, resulting in a time that broke the previous national record by 0.12 seconds.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-25T11:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T08:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "6",
       "title": "News #6",
       "summary": "Brands adopt greener models to win loyalty.",
-      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "content": "Lower waste and better retention after supply‑chain redesigns. Companies implementing circular economy principles reported 25% reduction in material costs and 40% improvement in customer satisfaction scores, proving sustainability can drive profitability.",
       "status": "unverified",
       "category": "Business",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-25T10:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T07:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "7",
       "title": "News #7",
       "summary": "Rover finds mineral clues of ancient water.",
-      "content": "Tandem cells convert more sunlight; trials begin.",
+      "content": "Hydrated minerals hint at past streams and habitable conditions. The discovery of clay minerals and sulfate deposits suggests that Mars once had flowing water for extended periods, potentially supporting microbial life forms billions of years ago.",
       "status": "unverified",
       "category": "Science",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-25T09:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T06:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "8",
       "title": "News #8",
       "summary": "Curriculum refresh centers critical thinking.",
-      "content": "Longitudinal studies will track engagement and outcomes.",
+      "content": "Inquiry‑based projects measure real‑world problem solving. The new curriculum emphasizes collaborative learning and practical applications, preparing students for careers that require creative thinking and adaptability in rapidly changing industries.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-25T08:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T05:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "9",
       "title": "News #9",
       "summary": "Election results hint at a shift in voter priorities.",
-      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "content": "Analysts note higher youth turnout, reshaping party priorities. Exit polls reveal increased engagement among voters under 30, with climate change and education emerging as top concerns that influenced the final results.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-25T07:47:04.388Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T04:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "10",
       "title": "News #10",
       "summary": "AI breakthrough promises faster medical diagnostics.",
-      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "content": "The model flags rare conditions from scans with high precision. Researchers trained the AI on over 100,000 medical images, achieving 95% accuracy in detecting early-stage diseases that human radiologists often miss.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-25T06:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T03:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "11",
       "title": "News #11",
       "summary": "Mediterranean diet linked to heart health benefits.",
-      "content": "Hotlines and school programs aim for early support.",
+      "content": "Longitudinal data associates the diet with lower cardiovascular risk. A 10-year study of 25,000 participants found that those following Mediterranean eating patterns had 30% fewer heart attacks and strokes compared to control groups.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-25T05:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T02:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "12",
       "title": "News #12",
       "summary": "City festival returns with record attendance.",
-      "content": "Audiences praise practical effects and character‑driven story.",
+      "content": "Headliners and new artists boost local business. The three-day event attracted over 150,000 visitors, generating an estimated $25 million in economic impact for local restaurants, hotels, and retail businesses.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-25T04:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T01:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "13",
       "title": "News #13",
       "summary": "Underdogs clinch title after dramatic finale.",
-      "content": "Technique changes credited for the record time.",
+      "content": "An overtime goal sealed a historic championship. The underdog team, ranked last in preseason polls, completed their Cinderella run with a last-second score that secured their first title in 45 years, sparking city-wide celebrations.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-25T03:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-26T00:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "14",
       "title": "News #14",
       "summary": "Markets edge to fresh highs on earnings beat.",
-      "content": "Lower waste and better retention after supply‑chain redesigns.",
+      "content": "Indexes rose on stronger guidance despite inflation concerns. Corporate earnings exceeded analyst expectations by 8% on average, with technology and healthcare sectors leading the gains as investors focused on fundamental business performance.",
       "status": "unverified",
       "category": "Business",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-25T02:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T23:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "15",
       "title": "News #15",
       "summary": "Researchers catalog a vibrant rainforest species.",
-      "content": "Hydrated minerals hint at past streams and habitable conditions.",
+      "content": "Genetics confirm a new species, guiding conservation. DNA analysis revealed a previously unknown tree frog species in the Amazon, highlighting the region's biodiversity and the urgent need for habitat protection as deforestation continues.",
       "status": "unverified",
       "category": "Science",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-25T01:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T22:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "16",
       "title": "News #16",
       "summary": "Online platform tops one million learners.",
-      "content": "Inquiry‑based projects measure real‑world problem solving.",
+      "content": "Modular courses help workers reskill with certificates. The platform's success stems from its adaptive learning algorithms and industry partnerships, with 85% of graduates reporting career advancement within six months of completing their programs.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-25T00:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T21:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "17",
       "title": "News #17",
       "summary": "Parliament debates stronger climate legislation.",
-      "content": "Analysts note higher youth turnout, reshaping party priorities.",
+      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives. The proposed legislation would set binding emissions reductions while providing tax credits for renewable energy adoption and electric vehicle purchases.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T23:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T20:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "18",
       "title": "News #18",
       "summary": "Quantum team reports record coherence stability.",
-      "content": "The model flags rare conditions from scans with high precision.",
+      "content": "Longer qubit coherence advances practical error correction. Scientists achieved a 10-second coherence time, a critical milestone for building reliable quantum computers that can solve complex problems beyond classical computing capabilities.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T22:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T19:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "19",
       "title": "News #19",
       "summary": "Trial data shows promising vaccine efficacy.",
-      "content": "Longitudinal data associates the diet with lower cardiovascular risk.",
+      "content": "Phase‑III results show strong protection and mild side effects. The vaccine demonstrated 87% effectiveness against severe illness with only minor reactions like fatigue and soreness reported in less than 15% of participants.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T21:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T18:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "20",
       "title": "News #20",
       "summary": "Beloved series announces its final season.",
-      "content": "Headliners and new artists boost local business.",
+      "content": "Creators promise a conclusive arc and farewells. After seven successful seasons, the show's writers have crafted a final chapter that ties up all major plotlines while giving fans the emotional closure they've been anticipating.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-24T20:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T17:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "21",
       "title": "News #21",
       "summary": "New downtown sports complex opens to public.",
-      "content": "An overtime goal sealed a historic championship.",
+      "content": "Courts, pools, and classes open for the community. The $15 million facility features Olympic-size swimming pools, indoor basketball courts, fitness centers, and specialized programs for youth development and senior wellness.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-24T19:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T16:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "22",
       "title": "News #22",
       "summary": "AI startup secures major growth investment.",
-      "content": "Indexes rose on stronger guidance despite inflation concerns.",
+      "content": "Funds expand hiring and cloud capacity with privacy audits. The Series B round of $50 million will fuel the company's expansion into new markets while maintaining their commitment to ethical AI development and transparent data practices.",
       "status": "unverified",
       "category": "Business",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-24T18:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T15:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "23",
       "title": "News #23",
       "summary": "Lab boosts solar efficiency with new cells.",
-      "content": "Genetics confirm a new species, guiding conservation.",
+      "content": "Tandem cells convert more sunlight; trials begin. The new photovoltaic technology combines multiple semiconductor layers to capture different wavelengths of light, achieving 32% efficiency compared to traditional single-layer cells at 22%.",
       "status": "unverified",
       "category": "Science",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-24T17:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T14:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "24",
       "title": "News #24",
       "summary": "University wins grant for teaching research.",
-      "content": "Modular courses help workers reskill with certificates.",
+      "content": "Longitudinal studies will track engagement and outcomes. The $2.5 million grant will fund research into effective teaching methodologies, with the goal of improving student retention and academic performance across diverse learning environments.",
       "status": "unverified",
       "category": "Education",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-24T16:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T13:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "25",
       "title": "News #25",
       "summary": "New policy proposal aims to reform national healthcare.",
-      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals. The comprehensive reform package includes provisions for mental health services and prescription drug cost controls, addressing long-standing gaps in the current system.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-24T15:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T12:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "26",
       "title": "News #26",
       "summary": "New battery design targets double‑day phone usage.",
-      "content": "Longer qubit coherence advances practical error correction.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway. The new battery chemistry offers twice the energy density of current lithium-ion batteries while maintaining safety standards and reducing production costs.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-24T14:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T11:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "27",
       "title": "News #27",
       "summary": "Nationwide mental health campaign kicks off.",
-      "content": "Phase‑III results show strong protection and mild side effects.",
+      "content": "Hotlines and school programs aim for early support. The initiative includes 24/7 crisis intervention services, mental health education in schools, and training for teachers to recognize warning signs of depression and anxiety.",
       "status": "unverified",
       "category": "Health",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T13:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T10:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "28",
       "title": "News #28",
       "summary": "Blockbuster breaks opening‑weekend records.",
-      "content": "Creators promise a conclusive arc and farewells.",
+      "content": "Audiences praise practical effects and character‑driven story. The film grossed $180 million domestically in its first three days, surpassing previous records for the genre while earning critical acclaim for its innovative storytelling approach.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T12:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T09:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "29",
       "title": "News #29",
       "summary": "National record falls in 100‑meter sprint.",
-      "content": "Courts, pools, and classes open for the community.",
+      "content": "Technique changes credited for the record time. The sprinter's new training regimen focused on explosive starts and improved running mechanics, resulting in a time that broke the previous national record by 0.12 seconds.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T11:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T08:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "30",
       "title": "News #30",
       "summary": "Brands adopt greener models to win loyalty.",
-      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "content": "Lower waste and better retention after supply‑chain redesigns. Companies implementing circular economy principles reported 25% reduction in material costs and 40% improvement in customer satisfaction scores, proving sustainability can drive profitability.",
       "status": "unverified",
       "category": "Business",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-24T10:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T07:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "31",
       "title": "News #31",
       "summary": "Rover finds mineral clues of ancient water.",
-      "content": "Tandem cells convert more sunlight; trials begin.",
+      "content": "Hydrated minerals hint at past streams and habitable conditions. The discovery of clay minerals and sulfate deposits suggests that Mars once had flowing water for extended periods, potentially supporting microbial life forms billions of years ago.",
       "status": "unverified",
       "category": "Science",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-24T09:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T06:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "32",
       "title": "News #32",
       "summary": "Curriculum refresh centers critical thinking.",
-      "content": "Longitudinal studies will track engagement and outcomes.",
+      "content": "Inquiry‑based projects measure real‑world problem solving. The new curriculum emphasizes collaborative learning and practical applications, preparing students for careers that require creative thinking and adaptability in rapidly changing industries.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-24T08:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T05:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "33",
       "title": "News #33",
       "summary": "Election results hint at a shift in voter priorities.",
-      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "content": "Analysts note higher youth turnout, reshaping party priorities. Exit polls reveal increased engagement among voters under 30, with climate change and education emerging as top concerns that influenced the final results.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-24T07:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T04:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "34",
       "title": "News #34",
       "summary": "AI breakthrough promises faster medical diagnostics.",
-      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "content": "The model flags rare conditions from scans with high precision. Researchers trained the AI on over 100,000 medical images, achieving 95% accuracy in detecting early-stage diseases that human radiologists often miss.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-24T06:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T03:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "35",
       "title": "News #35",
       "summary": "Mediterranean diet linked to heart health benefits.",
-      "content": "Hotlines and school programs aim for early support.",
+      "content": "Longitudinal data associates the diet with lower cardiovascular risk. A 10-year study of 25,000 participants found that those following Mediterranean eating patterns had 30% fewer heart attacks and strokes compared to control groups.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-24T05:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T02:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "36",
       "title": "News #36",
       "summary": "City festival returns with record attendance.",
-      "content": "Audiences praise practical effects and character‑driven story.",
+      "content": "Headliners and new artists boost local business. The three-day event attracted over 150,000 visitors, generating an estimated $25 million in economic impact for local restaurants, hotels, and retail businesses.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-24T04:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T01:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "37",
       "title": "News #37",
       "summary": "Underdogs clinch title after dramatic finale.",
-      "content": "Technique changes credited for the record time.",
+      "content": "An overtime goal sealed a historic championship. The underdog team, ranked last in preseason polls, completed their Cinderella run with a last-second score that secured their first title in 45 years, sparking city-wide celebrations.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-24T03:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-25T00:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "38",
       "title": "News #38",
       "summary": "Markets edge to fresh highs on earnings beat.",
-      "content": "Lower waste and better retention after supply‑chain redesigns.",
+      "content": "Indexes rose on stronger guidance despite inflation concerns. Corporate earnings exceeded analyst expectations by 8% on average, with technology and healthcare sectors leading the gains as investors focused on fundamental business performance.",
       "status": "unverified",
       "category": "Business",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-24T02:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T23:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "39",
       "title": "News #39",
       "summary": "Researchers catalog a vibrant rainforest species.",
-      "content": "Hydrated minerals hint at past streams and habitable conditions.",
+      "content": "Genetics confirm a new species, guiding conservation. DNA analysis revealed a previously unknown tree frog species in the Amazon, highlighting the region's biodiversity and the urgent need for habitat protection as deforestation continues.",
       "status": "unverified",
       "category": "Science",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-24T01:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T22:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "40",
       "title": "News #40",
       "summary": "Online platform tops one million learners.",
-      "content": "Inquiry‑based projects measure real‑world problem solving.",
+      "content": "Modular courses help workers reskill with certificates. The platform's success stems from its adaptive learning algorithms and industry partnerships, with 85% of graduates reporting career advancement within six months of completing their programs.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-24T00:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1523050854058-8df90110cfe1?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T21:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "41",
       "title": "News #41",
       "summary": "Parliament debates stronger climate legislation.",
-      "content": "Analysts note higher youth turnout, reshaping party priorities.",
+      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives. The proposed legislation would set binding emissions reductions while providing tax credits for renewable energy adoption and electric vehicle purchases.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-23T23:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T20:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "42",
       "title": "News #42",
       "summary": "Quantum team reports record coherence stability.",
-      "content": "The model flags rare conditions from scans with high precision.",
+      "content": "Longer qubit coherence advances practical error correction. Scientists achieved a 10-second coherence time, a critical milestone for building reliable quantum computers that can solve complex problems beyond classical computing capabilities.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-23T22:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T19:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "43",
       "title": "News #43",
       "summary": "Trial data shows promising vaccine efficacy.",
-      "content": "Longitudinal data associates the diet with lower cardiovascular risk.",
+      "content": "Phase‑III results show strong protection and mild side effects. The vaccine demonstrated 87% effectiveness against severe illness with only minor reactions like fatigue and soreness reported in less than 15% of participants.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-23T21:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T18:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "44",
       "title": "News #44",
       "summary": "Beloved series announces its final season.",
-      "content": "Headliners and new artists boost local business.",
+      "content": "Creators promise a conclusive arc and farewells. After seven successful seasons, the show's writers have crafted a final chapter that ties up all major plotlines while giving fans the emotional closure they've been anticipating.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-23T20:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T17:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "45",
       "title": "News #45",
       "summary": "New downtown sports complex opens to public.",
-      "content": "An overtime goal sealed a historic championship.",
+      "content": "Courts, pools, and classes open for the community. The $15 million facility features Olympic-size swimming pools, indoor basketball courts, fitness centers, and specialized programs for youth development and senior wellness.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-23T19:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T16:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "46",
       "title": "News #46",
       "summary": "AI startup secures major growth investment.",
-      "content": "Indexes rose on stronger guidance despite inflation concerns.",
+      "content": "Funds expand hiring and cloud capacity with privacy audits. The Series B round of $50 million will fuel the company's expansion into new markets while maintaining their commitment to ethical AI development and transparent data practices.",
       "status": "unverified",
       "category": "Business",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-23T18:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T15:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "47",
       "title": "News #47",
       "summary": "Lab boosts solar efficiency with new cells.",
-      "content": "Genetics confirm a new species, guiding conservation.",
+      "content": "Tandem cells convert more sunlight; trials begin. The new photovoltaic technology combines multiple semiconductor layers to capture different wavelengths of light, achieving 32% efficiency compared to traditional single-layer cells at 22%.",
       "status": "unverified",
       "category": "Science",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-23T17:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T14:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "48",
       "title": "News #48",
       "summary": "University wins grant for teaching research.",
-      "content": "Modular courses help workers reskill with certificates.",
+      "content": "Longitudinal studies will track engagement and outcomes. The $2.5 million grant will fund research into effective teaching methodologies, with the goal of improving student retention and academic performance across diverse learning environments.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-23T16:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T13:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "49",
       "title": "News #49",
       "summary": "New policy proposal aims to reform national healthcare.",
-      "content": "Lawmakers discussed ambitious carbon targets with clean‑energy incentives.",
+      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals. The comprehensive reform package includes provisions for mental health services and prescription drug cost controls, addressing long-standing gaps in the current system.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-23T15:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T12:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "50",
       "title": "News #50",
       "summary": "New battery design targets double‑day phone usage.",
-      "content": "Longer qubit coherence advances practical error correction.",
+      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway. The new battery chemistry offers twice the energy density of current lithium-ion batteries while maintaining safety standards and reducing production costs.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-23T14:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T11:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "51",
       "title": "News #51",
       "summary": "Nationwide mental health campaign kicks off.",
-      "content": "Phase‑III results show strong protection and mild side effects.",
+      "content": "Hotlines and school programs aim for early support. The initiative includes 24/7 crisis intervention services, mental health education in schools, and training for teachers to recognize warning signs of depression and anxiety.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Alice Nguyen",
-      "reportedAt": "2025-08-23T13:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1581595219315-aacf4d0ef345?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T10:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "52",
       "title": "News #52",
       "summary": "Blockbuster breaks opening‑weekend records.",
-      "content": "Creators promise a conclusive arc and farewells.",
+      "content": "Audiences praise practical effects and character‑driven story. The film grossed $180 million domestically in its first three days, surpassing previous records for the genre while earning critical acclaim for its innovative storytelling approach.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Bob Harris",
-      "reportedAt": "2025-08-23T12:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T09:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "53",
       "title": "News #53",
       "summary": "National record falls in 100‑meter sprint.",
-      "content": "Courts, pools, and classes open for the community.",
+      "content": "Technique changes credited for the record time. The sprinter's new training regimen focused on explosive starts and improved running mechanics, resulting in a time that broke the previous national record by 0.12 seconds.",
       "status": "unverified",
       "category": "Sports",
       "reporter": "Carla Gomez",
-      "reportedAt": "2025-08-23T11:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T08:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "54",
       "title": "News #54",
       "summary": "Brands adopt greener models to win loyalty.",
-      "content": "Funds expand hiring and cloud capacity with privacy audits.",
+      "content": "Lower waste and better retention after supply‑chain redesigns. Companies implementing circular economy principles reported 25% reduction in material costs and 40% improvement in customer satisfaction scores, proving sustainability can drive profitability.",
       "status": "unverified",
       "category": "Business",
       "reporter": "David Lee",
-      "reportedAt": "2025-08-23T10:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T07:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "55",
       "title": "News #55",
       "summary": "Rover finds mineral clues of ancient water.",
-      "content": "Tandem cells convert more sunlight; trials begin.",
+      "content": "Hydrated minerals hint at past streams and habitable conditions. The discovery of clay minerals and sulfate deposits suggests that Mars once had flowing water for extended periods, potentially supporting microbial life forms billions of years ago.",
       "status": "unverified",
       "category": "Science",
       "reporter": "Emma Watson",
-      "reportedAt": "2025-08-23T09:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T06:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "56",
       "title": "News #56",
       "summary": "Curriculum refresh centers critical thinking.",
-      "content": "Longitudinal studies will track engagement and outcomes.",
+      "content": "Inquiry‑based projects measure real‑world problem solving. The new curriculum emphasizes collaborative learning and practical applications, preparing students for careers that require creative thinking and adaptability in rapidly changing industries.",
       "status": "unverified",
       "category": "Education",
       "reporter": "Farah Ali",
-      "reportedAt": "2025-08-23T08:47:04.389Z",
+      "reportedAt": "2025-08-24T05:04:33.478Z",
       "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "57",
       "title": "News #57",
       "summary": "Election results hint at a shift in voter priorities.",
-      "content": "Officials unveiled a healthcare plan expanding coverage and aiding rural hospitals.",
+      "content": "Analysts note higher youth turnout, reshaping party priorities. Exit polls reveal increased engagement among voters under 30, with climate change and education emerging as top concerns that influenced the final results.",
       "status": "unverified",
       "category": "Politics",
       "reporter": "George Martin",
-      "reportedAt": "2025-08-23T07:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T04:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "58",
       "title": "News #58",
       "summary": "AI breakthrough promises faster medical diagnostics.",
-      "content": "Prototype lithium‑sulfur cells show longer life; scaling underway.",
+      "content": "The model flags rare conditions from scans with high precision. Researchers trained the AI on over 100,000 medical images, achieving 95% accuracy in detecting early-stage diseases that human radiologists often miss.",
       "status": "unverified",
       "category": "Technology",
       "reporter": "Hana Sato",
-      "reportedAt": "2025-08-23T06:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T03:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "59",
       "title": "News #59",
       "summary": "Mediterranean diet linked to heart health benefits.",
-      "content": "Hotlines and school programs aim for early support.",
+      "content": "Longitudinal data associates the diet with lower cardiovascular risk. A 10-year study of 25,000 participants found that those following Mediterranean eating patterns had 30% fewer heart attacks and strokes compared to control groups.",
       "status": "unverified",
       "category": "Health",
       "reporter": "Ibrahim Khan",
-      "reportedAt": "2025-08-23T05:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T02:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     },
     {
       "id": "60",
       "title": "News #60",
       "summary": "City festival returns with record attendance.",
-      "content": "Audiences praise practical effects and character‑driven story.",
+      "content": "Headliners and new artists boost local business. The three-day event attracted over 150,000 visitors, generating an estimated $25 million in economic impact for local restaurants, hotels, and retail businesses.",
       "status": "unverified",
       "category": "Entertainment",
       "reporter": "Julia Chen",
-      "reportedAt": "2025-08-23T04:47:04.389Z",
-      "imageUrl": "https://images.unsplash.com/photo-1501281668745-f76f2b7d4a7d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
+      "reportedAt": "2025-08-24T01:04:33.478Z",
+      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&crop=center&auto=format&q=80"
     }
   ],
   "comments": [
@@ -668,7 +668,7 @@
       "isFake": false,
       "text": "Evidence and sources look strong.",
       "imageUrl": "",
-      "at": "2025-08-25T15:47:04.389Z"
+      "at": "2025-08-26T12:04:33.478Z"
     }
   ],
   "votes": [
