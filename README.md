@@ -4,7 +4,7 @@
 ## The Jobless – News Verification
 
 ## Link
-  * Deployed site(Vercel) : https://project-01-the-anti-fake-news-syste-puce.vercel.app/
+  * Deployed site(Vercel) : https://project-01-the-anti-fake-news-syste-puce.vercel.app/](https://project-01-the-anti-fake-news-system-thejobless-dbxwuwu84.vercel.app
   * Demo video :
 
 ### Group Members
