@@ -5,7 +5,7 @@
 
 ## Link
   * Deployed site(Vercel) : https://project-01-the-anti-fake-news-syste-puce.vercel.app
-  * Demo video :
+  * Demo video : https://youtu.be/5uJzfY7FjIo
 
 ### Group Members
 - 662115015-Natthaphong Kangkantam (SEC 702)
