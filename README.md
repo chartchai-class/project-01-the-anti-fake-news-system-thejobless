@@ -7,7 +7,7 @@ A Vue 3 single‑page app to browse news, filter Fake/Verified, view details, vo
 
 ### Group Members
 - Name Surname (Student ID)
-- Name Surname (Student ID)
+- Nawapon Sriboonreang (662115026)
 - Name Surname (Student ID)
 
 ### Tech Stack
