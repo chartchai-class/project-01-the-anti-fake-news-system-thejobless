@@ -8,9 +8,9 @@
   * Demo video :
 
 ### Group Members
-- Name Surname (Student ID)
+- 662115015-Natthaphong Kangkantam (SEC 702)
 - 662115026-Nawapon Sriboonreang (SEC 702)
-- Name Surname (Student ID)
+- 662115039-Manapat Kaewlai (SEC 702)
 
 ### Tech Stack
 - Vue 3 + Vite
