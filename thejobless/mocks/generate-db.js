@@ -149,6 +149,83 @@ const REPORTERS = [
 
 const N = 60;
 
+// Add this helper function at the top
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateComments() {
+  const comments = [];
+  const commentTexts = [
+    "This looks suspicious, I need more evidence",
+    "I've seen this before, seems legitimate",
+    "The source is questionable",
+    "This is well-documented and verified",
+    "I'm not convinced by this claim",
+    "This has been fact-checked and confirmed",
+    "The images seem manipulated",
+    "I trust this source, they're reliable",
+    "This needs more investigation",
+    "I can confirm this is accurate",
+    "The timeline doesn't add up",
+    "This matches what I know about the topic",
+    "I'm skeptical about these claims",
+    "This is consistent with other reports",
+    "The evidence is compelling",
+    "I've fact-checked this myself",
+    "This seems like misinformation",
+    "I can verify this from multiple sources",
+    "The claims are exaggerated",
+    "This is backed by solid research",
+    "I'm not buying this story",
+    "This has been debunked before",
+    "I trust the reporter on this one",
+    "The evidence is too weak",
+    "This aligns with official statements"
+  ];
+  
+  // Generate comments for 20 selected news items
+  const newsWithComments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]; // First 20 news items
+  
+  newsWithComments.forEach(newsId => {
+    const numComments = Math.floor(Math.random() * 3) + 3; // 3-5 comments per selected news
+    
+    for (let j = 0; j < numComments; j++) {
+      const isFake = Math.random() > 0.6; // 40% fake votes
+      const hasImage = Math.random() > 0.7; // 30% have evidence images
+      
+      comments.push({
+        id: `c${newsId}_${j}`,
+        newsId: String(newsId),
+        isFake,
+        text: pick(commentTexts),
+        imageUrl: hasImage ? `https://images.unsplash.com/photo-${1500000000000 + Math.floor(Math.random() * 1000000000)}?w=400&h=300&fit=crop&auto=format&q=80` : "",
+        at: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString() // Random time within 30 days
+      });
+    }
+  });
+  
+  return comments;
+}
+
+function generateVotes() {
+  const votes = [];
+  
+  // Generate votes for each news item
+  for (let i = 1; i <= 60; i++) {
+    const fakeVotes = Math.floor(Math.random() * 50) + 5; // 5-54 fake votes
+    const notFakeVotes = Math.floor(Math.random() * 50) + 5; // 5-54 not fake votes
+    
+    votes.push({
+      newsId: String(i),
+      fake: fakeVotes,
+      notFake: notFakeVotes
+    });
+  }
+  
+  return votes;
+}
+
 const news = Array.from({ length: N }).map((_, i) => {
   const cat = CATEGORIES[i % CATEGORIES.length];
   const itemIndex = i % cat.summaries.length; // Use same index for summary and content
@@ -168,17 +245,9 @@ const news = Array.from({ length: N }).map((_, i) => {
 });
 
 // ตัวอย่างโหวตบางรายการ (ที่เหลือ = ไม่มีโหวต → unverified)
-const votes = [];
-for (let i = 0; i < N; i++) {
-  const id = String(i + 1);
-  if (i % 5 === 0) votes.push({ newsId: id, fake: 2, notFake: 6 });
-  else if (i % 5 === 1) votes.push({ newsId: id, fake: 5, notFake: 1 });
-  else if (i % 5 === 2) votes.push({ newsId: id, fake: 2, notFake: 2 });
-}
+const votes = generateVotes();
 
-const comments = [
-  { id: "c1", newsId: "1", isFake: false, text: "Evidence and sources look strong.", imageUrl: "", at: new Date().toISOString() }
-];
+const comments = generateComments();
 
 const out = { news, comments, votes };
 const outPath = path.join(__dirname, "..", "public", "data");
