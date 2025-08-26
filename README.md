@@ -28,7 +28,41 @@
 - Stable images with fallback if an image fails to load
 
 ---
-
+### Project structure
+```text
+thejobless/
+├─ .vercel/                      # Vercel project metadata
+├─ node_modules/
+├─ public/
+│  └─ data/
+│     └─ db.json                 # Mock data served at /data/db.json
+├─ scripts/
+│  └─ generate-db.js             # Generate public/data/db.json
+├─ src/
+│  ├─ assets/                    # Static assets (if any)
+│  ├─ components/
+│  │  └─ CommentsList.vue
+│  ├─ pages/
+│  │  ├─ Home.vue                # List + filters + pagination
+│  │  ├─ NewsDetail.vue          # Full detail + votes + comments (paginated)
+│  │  └─ VotePage.vue            # Vote + optional evidence URL
+│  ├─ router/
+│  │  └─ index.js                # Routes: / , /news/:id , /news/:id/vote
+│  ├─ store/
+│  │  └─ news.js                 # Pinia store (news/votes/comments/filters)
+│  ├─ style.css                  # Tailwind entry
+│  ├─ App.vue
+│  └─ main.js                    # Bootstrap + Pinia + Router + Vercel analytics/insights
+├─ index.html                    # Vite entry (mounts #app)
+├─ vercel.json                   # SPA rewrite for Vue Router
+├─ vite.config.js
+├─ tailwind.config.js
+├─ postcss.config.js
+├─ package.json                  # Scripts & deps
+├─ package-lock.json
+└─ .gitignore
+```
+---
 ## Getting Started
 
 ### Prerequisites
