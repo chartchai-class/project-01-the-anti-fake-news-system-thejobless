@@ -19,7 +19,7 @@ Then follow the instructions to push to phase-ii.
 
 ## What Gets Migrated
 
-- ✅ All 42 commits with complete history
+- ✅ All 44 commits with complete history (41 original + 3 migration tools)
 - ✅ All 2 tags (Final-version, Version-1.0)
 - ✅ All project files (thejobless/, configs, etc.)
 - ✅ Phase-ii README (preserved if exists)

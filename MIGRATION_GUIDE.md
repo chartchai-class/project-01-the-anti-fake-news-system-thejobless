@@ -2,7 +2,7 @@
 
 ## Overview
 This guide explains how to migrate all content from the **project-01** repository to the **phase-ii** repository while preserving:
-- ✅ All commits (41 commits)
+- ✅ All commits (44 commits: 41 original + 3 migration tool commits)
 - ✅ All tags (Final-version, Version-1.0)
 - ✅ The existing README from phase-ii repository
 - ✅ All project files and directories
@@ -110,7 +110,7 @@ After migration, verify the phase-ii repository:
    git clone https://github.com/chartchai-class/the-social-anti-fake-news-system-phase-ii-thejobless.git
    cd the-social-anti-fake-news-system-phase-ii-thejobless
    git log --oneline | wc -l
-   # Should show 41+ commits
+   # Should show 44 commits
    ```
 
 2. **Check tags:**
@@ -172,7 +172,7 @@ For issues or questions about the migration:
 This migration preserves the complete history of project-01 while respecting the existing README in phase-ii. All commits, tags, and files are transferred seamlessly.
 
 **Total Migration Size:**
-- Commits: 41
+- Commits: 44 (41 original + 3 migration tool commits)
 - Tags: 2
-- Files: ~20+ files and directories
+- Files: ~25+ files and directories
 - History: Complete from initial commit
